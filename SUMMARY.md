@@ -9,11 +9,11 @@
 
 ## Keras
 
-* keras\_Intro
+* [keras\_Intro](keras/kerasintro.md)
 
 ## pyTorch
 
-* pyTorch\_Intro
+* [pyTorch\_Intro](pytorch/pytorchintro.md)
 
 ## caffe
 
