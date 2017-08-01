@@ -13,7 +13,9 @@
 - Faster R-CNN with Resnet 101
 - Faster RCNN with Inception Resnet v2
 
-# 2. 설치 (ubunutu 16.4, python3)
+# 2. 설치 
+
+>ubunutu 16.4, python3, tf 1.2
 
 패키지 설치 
 ```bash
@@ -58,7 +60,10 @@ OK
 
 
 
-###### [참고] 
+###### [참고] 오류 
+
+- TypeError: a bytes-like object is required, not 'str'
+    - TF 1.2이상으로 업그레이드 
 
 Object Detection 의 사용 지침에 오류가 좀 있습니다. 
 처음 api 나오고 나서 프로젝트는 계속 업데이트 되는데 readme 는
