@@ -54,7 +54,7 @@ OK
 
 ## 3. 실행 
 
-> 튜토리얼 : `./object detection/object_detection_tutorial.ipyn`
+> 튜토리얼 : [./object detection/object_detection_tutorial.ipynb](https://github.com/tensorflow/models/blob/master/object_detection/object_detection_tutorial.ipynb)
 
 > 참고 : [How to train your own Object Detector with TensorFlow’s Object Detector API](https://medium.com/towards-data-science/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9)
 
