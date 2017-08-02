@@ -14,7 +14,12 @@
 
 ###### 설치 
 - Google Cloud , Docker
-- `docker pull alantrrs/py-faster-rcnn`
+
+sudo docker pull jimmyli/faster-rcnn-gpu
+sudo nvidia-docker run -i -t --name jimmyli2 jimmyli/faster-rcnn-gpu:latest /bin/bash
+
+
+
 
 ###### 설치 확인 
 - Download pre-computed Faster R-CNN detectors : `./data/scripts/fetch_faster_rcnn_models.sh`
