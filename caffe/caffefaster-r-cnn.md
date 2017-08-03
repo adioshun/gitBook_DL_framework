@@ -14,10 +14,16 @@
 
 ###### 설치 
 - Google Cloud , Docker
-
+```
 sudo docker pull jimmyli/faster-rcnn-gpu
 sudo nvidia-docker run -i -t --name jimmyli2 jimmyli/faster-rcnn-gpu:latest /bin/bash
+```
+sudo nvidia-docker run -i -t -p 2222:22 -p 8585:8080 --volume /home/hjlim99/docker:/root --name 'rcnn' jimmyli/faster-rcnn-gpu:latest /bin/bash
 
+```
+sudo docker pull tshrjn/py-faster-rcnn-demo
+sudo nvidia-docker run -i -t --name tshrjn tshrjn/py-faster-rcnn-demo:latest /bin/bash
+```
 
 
 
