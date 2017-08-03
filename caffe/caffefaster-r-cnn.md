@@ -32,6 +32,7 @@ sudo nvidia-docker run -i -t --name tshrjn tshrjn/py-faster-rcnn-demo:latest /bi
 > fetch\_faster\_rcnn\_models.sh 수정 : `URL=https://dl.dropboxusercontent.com/s/o6ii098bu51d139/$FILE`  
 > /home/py-faster-rcnn/lib/fast\_rcnn/config.py : set \_\_C.USE\_GPU\_NMS = False
 
+
 ## 2. 학습
 
 > [Good to Great](http://goodtogreate.tistory.com/entry/Faster-R-CNN-Training)
@@ -53,9 +54,119 @@ pre Train model 다운 로드
 
 ```bash
 $ ./data/scripts/fetch_imagenet_models.sh
+
+time ./tools/train_net.py --gpu ${GPU_ID} \
+  --solver models/${PT_DIR}/${NET}/faster_rcnn_end2end/solver.prototxt \
+  --weights data/imagenet_models/${NET}.v2.caffemodel \
+  --imdb ${TRAIN_IMDB} \
+  --iters ${ITERS} \
+  --cfg experiments/cfgs/faster_rcnn_end2end.yml \
+  ${EXTRA_ARGS}
+```
+
+###### solver.prototxt
+```
+
+train_net: "models/pascal_voc/VGG_CNN_M_1024/faster_rcnn_end2end/train.prototxt"
+base_lr: 0.001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 50000
+display: 20
+average_loss: 100
+momentum: 0.9
+weight_decay: 0.0005
+# We disable standard caffe solver snapshotting and implement our own snapshot
+# function
+snapshot: 0
+# We still use the snapshot prefix, though
+snapshot_prefix: "vgg_cnn_m_1024_faster_rcnn"
+```
+
+
+###### train.prototxt
+
+> 모델구조
+
+```
+name: "VGG_CNN_M_1024"
+layer {
+  name: 'input-data'
+  type: 'Python'
+  top: 'data'
+  top: 'im_info'
+  top: 'gt_boxes'
+  python_param {
+    module: 'roi_data_layer.layer'
+    layer: 'RoIDataLayer'
+    param_str: "'num_classes': 21"
+  }
+}
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 96
+    kernel_size: 7
+    stride: 2
+  }
+}
+
 ```
 
 ## 3. 테스트
+```
+./tools/test_net.py \ 
+--gpu 0 \
+--def models/pascal_voc/ZF/faster_rcnn_end2end/test.prototxt \
+--net ./data/faster_rcnn_models/ZF_faster_rcnn_final.caffemodel \
+--imdb voc_2007_test \
+--cfg experiments/cfgs/faster_rcnn_end2end.yml
+```
 
+###### test.prototxt
 
-
+```
+name: "VGG_CNN_M_1024"
+input: "data"
+input_shape {
+  dim: 1
+  dim: 3
+  dim: 224
+  dim: 224
+}
+input: "im_info"
+input_shape {
+  dim: 1
+  dim: 3
+}
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 96
+    kernel_size: 7
+    stride: 2
+  }
+}
+```

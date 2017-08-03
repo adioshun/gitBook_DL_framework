@@ -59,7 +59,7 @@ Training/Testing을 위해 보통 두 가지 파일을 정의함
 
 * caffe train –solver=solver\_file.prototxt \(Ubuntu: caffe.bin\)
   - solver models : solver.prototxt 
-  - weights data : .caffemodel 
+  - weights data : caffemodel 
 
 
 #### B. Testing
