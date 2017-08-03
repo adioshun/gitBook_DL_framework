@@ -1,67 +1,78 @@
-## 1. 데이터 전처리 
+## 1. 데이터 전처리
 
 #### A. Dataset 준비하기
-- 파일과 라벨을 준비후 아래와 같은 텍스트 파일 만들기 
-```
-Subfolder1/file1.JPEG 7
-Subfolder2/file2.JPEG 3
-Subfolder3/file3.JPEG 4
-```
 
-- convert_imageset.bin –backend=“leveldb” –shuffle=true imageData/ imageList.txt imageData_levelDB
-  - 사용법: 실행파일.exe [FLAGS] ROOTFOLDER/ LISTFILE DB_NAME
-  - Label은 0부터 시작
-  - Shuffle, resize 등의 옵션을 활용
+* 파일과 라벨을 준비후 아래와 같은 텍스트 파일 만들기
 
-#### B. Mean image 구하기 
+  ```
+  Subfolder1/file1.JPEG 7
+  Subfolder2/file2.JPEG 3
+  Subfolder3/file3.JPEG 4
+  ```
+
+* convert\_imageset.bin –backend=“leveldb” –shuffle=true imageData/ imageList.txt imageData\_levelDB
+
+  * 사용법: 실행파일.exe \[FLAGS\] ROOTFOLDER/ LISTFILE DB\_NAME
+  * Label은 0부터 시작
+  * Shuffle, resize 등의 옵션을 활용
+
+#### B. Mean image 구하기
+
 대부분의 경우 training, testing 시에 image data에서 mean image를 뺀다
 
-- compute_image_mean.bin –backend=“leveldb” imageData_levelDB mean_imageData.binaryproto
-  - 사용법: 실행파일.exe [FLAGS] INPUT_DB [OUTPUT_FILE]
-  - LevelDB 또는 LMDB를 이용해서 만듦
-  - 실행결과 binaryproto 파일이 생성됨
-  
-
-
+* compute\_image\_mean.bin –backend=“leveldb” imageData\_levelDB mean\_imageData.binaryproto
+  * 사용법: 실행파일.exe \[FLAGS\] INPUT\_DB \[OUTPUT\_FILE\]
+  * LevelDB 또는 LMDB를 이용해서 만듦
+  * 실행결과 binaryproto 파일이 생성됨
 
 ## 2. 설정 파일
 
 Training/Testing을 위해 보통 두 가지 파일을 정의함
+
 #### A. Solver 정보를 담은 파일
-- Gradient update를 어떻게 시킬 것인가에 대한 정보를 담음
-- learning rate, weight decay 등의 parameter가 정의됨
-- Test interval, snapshot 횟수 등 정의
 
-#### B. Network 구조 정보를 담은 파일 : 실제 CNN 구조 정의 [[상세설명]](http://caffe.berkeleyvision.org/tutorial/layers.html)
-- Net
-    - Caffe에서 CNN (혹은 RNN 또는 일반 NN) 네트워크는 ‘Net’이라는 구조로 정의됨
-    - Net은 여러 개의 Layer 들이 연결된 구조 Directed Acyclic Graph(DAG) 구조만 만족하면 어떤 형태이든 training이 가능함
-- Layer
-    - CNN의 한 ‘층＇을 뜻함
-    - Convolution을 하는 Layer, Pooling을 하는 Layer, activation function을 통과하는 layer, input data layer, Loss를 계산하는 layer 등이 있음
-    - 소스코드에는 각 layer별로 Forward propagation, Backward propagation 방법이 CPU/GPU 버전별로 구현되어 있음
+* Gradient update를 어떻게 시킬 것인가에 대한 정보를 담음
+* learning rate, weight decay 등의 parameter가 정의됨
+* Test interval, snapshot 횟수 등 정의
 
-- Blob
-    - Layer를 통과하는 데이터 덩어리
-    - Image의 경우 주로 NxCxHxW 의 4차원 데이터가 사용됨 (N : Batch size, C :Channel Size, W : width, H : height)
-        
-> 확장자가 .prototxt로 Google [Protocol Buffers](https://developers.google.com/protocol-buffers/) 기반 
+#### B. Network 구조 정보를 담은 파일 : 실제 CNN 구조 정의 [\[상세설명\]](http://caffe.berkeleyvision.org/tutorial/layers.html)
 
+* Net
+  * Caffe에서 CNN \(혹은 RNN 또는 일반 NN\) 네트워크는 ‘Net’이라는 구조로 정의됨
+  * Net은 여러 개의 Layer 들이 연결된 구조 Directed Acyclic Graph\(DAG\) 구조만 만족하면 어떤 형태이든 training이 가능함
+* Layer
 
-## 3. 실행 
+  * CNN의 한 ‘층＇을 뜻함
+  * Convolution을 하는 Layer, Pooling을 하는 Layer, activation function을 통과하는 layer, input data layer, Loss를 계산하는 layer 등이 있음
+  * 소스코드에는 각 layer별로 Forward propagation, Backward propagation 방법이 CPU/GPU 버전별로 구현되어 있음
+
+* Blob
+
+  * Layer를 통과하는 데이터 덩어리
+  * Image의 경우 주로 NxCxHxW 의 4차원 데이터가 사용됨 \(N : Batch size, C :Channel Size, W : width, H : height\)
+
+> 확장자가 .prototxt로 Google [Protocol Buffers](https://developers.google.com/protocol-buffers/) 기반
+
+## 3. 실행
 
 #### A. Training
-- caffe train –solver=solver_file.prototxt (Ubuntu: caffe.bin)
+
+* caffe train –solver=solver\_file.prototxt \(Ubuntu: caffe.bin\)
+  - solver models : solver.prototxt 
+  - weights data : .caffemodel 
+
 
 #### B. Testing
-- Backward propagation없이 forward propagation을 통한 결과값만 출력
-- caffe test –gpu=0 \
-			–iterations=100 \ #iterations 옵션만큼 iteration 수행
-            –weights=weight_file.caffemodel \ # 미리 학습된 weight 파일 (.caffemodel 확장자)
-            –model=net_model.prototxt  #model은 solver가 아닌 net파일을 입력으로 줘야 함
-            
-            
-###### lenet_solver.prototxt
+
+* Backward propagation없이 forward propagation을 통한 결과값만 출력
+* caffe test –gpu=0 \
+ - iterations=100 \ #iterations 옵션만큼 iteration 수행
+ - weights=weight_file.caffemodel \ # 미리 학습된 weight 파일 (.caffemodel 확장자)
+ - model=net_model.prototxt  #model은 solver가 아닌 net파일을 입력으로 줘야 함
+
+
+###### lenet\_solver.prototxt
+
 ```bash
 # The train/test net protocol buffer definition 
 net: "examples/mnist/lenet_train_test.prototxt" # Net 구조를 정의한 prototxt 파일
@@ -99,7 +110,8 @@ snapshot_prefix: "examples/mnist/lenet" # 프리픽스.caffemodel과 프리픽�
 solver_mode: GPU
 ```
 
-##### lenet_train_test.prototxt
+##### lenet\_train\_test.prototxt
+
 ```python
 name: "LeNet"
 
@@ -136,10 +148,10 @@ name: "LeNet"
 #  top: "data" #Input Layer는 top이 두개
 #  top: "label"#Input Layer는 top이 두개
 #  image_data_param {
-#	 shuffle: true #Shuffle 여부
-#	 source: "examples/mnist/dataList.txt" # Image list정보가 있는 파일, 
+#     shuffle: true #Shuffle 여부
+#     source: "examples/mnist/dataList.txt" # Image list정보가 있는 파일, 
 #                                            levelDB만들때 입력으로 쓴 파일과 같은 형태
-#	 batch_size: 64
+#     batch_size: 64
 #  }
 #  include {
 #    phase: TRAIN
@@ -231,10 +243,10 @@ layer {
   }
   convolution_param {
     num_output: 20 # Convolution후 output으로 나오는 feature map 개수 
-    			   # o1 = (i1 + 2 x pad_size – f1) / stride + 1
+                   # o1 = (i1 + 2 x pad_size – f1) / stride + 1
     kernel_size: 5 # Convolution에 쓰이는 filter의 크기
     stride: 1      # Stride 설정
-    #pad: 1		   # Padding 설정
+    #pad: 1           # Padding 설정
     weight_filler { # Weight에 대한 initialization
       type: "xavier" #Gaussian도 많이 쓰임
     }
@@ -337,7 +349,7 @@ layer {
   }
 }
 layer {
-  name: "accuracy" 			# Accuracy layer : Test 시에 Accuracy를 표시하기 위해 주로 사용
+  name: "accuracy"             # Accuracy layer : Test 시에 Accuracy를 표시하기 위해 주로 사용
   type: "Accuracy"
   bottom: "ip2"
   bottom: "label"
@@ -354,4 +366,6 @@ layer {
   top: "loss"
 }
 ```
-            
+
+
+
