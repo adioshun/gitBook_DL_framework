@@ -13,11 +13,12 @@
 ## Keras
 
 * [keras\_Intro](keras/kerasintro.md)
+* [Keras\_tutorial](keras/kerastutorial.md)
 
 ## pyTorch
 
 * [pyTorch\_Intro](pytorch/pytorchintro.md)
-* pyTorch\_tools\_Visdom
+* [pyTorch\_tools\_Visdom](pytorch/pytorchtools-visdom.md)
 
 ## caffe
 
