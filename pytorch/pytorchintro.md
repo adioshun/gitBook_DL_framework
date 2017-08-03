@@ -8,11 +8,29 @@
 
 ## 2. 설치 
 
-참고 : [PyTorch installation](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18_pyTorch.md)
 
+# PyTorch installation 
 
-## 3. 시각화 (Visdom)
+```bash 
+# conda (linux, osx)
+$ conda install pytorch torchvision -c soumith
 
-참고 : [Visdom for PyTorch Visualization](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18_pyTorch.md#visdom-for-pytorch-visualization)
+# pip : linux + python2.7 + cuda7.5
+$ pip install https://s3.amazonaws.com/pytorch/whl/cu75/torch-0.1.6.post22-cp27-cp27mu-linux_x86_64.whl 
+$ pip install torchvision
+
+# pip : linux + python2.7 + cuda8.0
+$ pip install https://s3.amazonaws.com/pytorch/whl/cu80/torch-0.1.6.post22-cp27-cp27mu-linux_x86_64.whl 
+$ pip install torchvision
+
+# pip : linux + python3.5 + cuda7.5
+$ pip install https://s3.amazonaws.com/pytorch/whl/cu75/torch-0.1.6.post22-cp35-cp35m-linux_x86_64.whl
+$ pip install torchvision
+
+# pip : linux + python3.5 + cuda8.0
+$ pip install https://s3.amazonaws.com/pytorch/whl/cu80/torch-0.1.6.post22-cp35-cp35m-linux_x86_64.whl
+$ pip install torchvision
+```
+
 
 
