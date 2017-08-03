@@ -37,8 +37,28 @@ sudo nvidia-docker run -i -t --name tshrjn tshrjn/py-faster-rcnn-demo:latest /bi
 
 ## 2. 학습 
 
+> [Good to Great](http://goodtogreate.tistory.com/entry/Faster-R-CNN-Training)
 
 
-http://goodtogreate.tistory.com/entry/Faster-R-CNN-Training
+학습 데이터 다운 받기 (VOC-2007 데이터)
+```bash
+if [ ! -d data ]; then mkdir data; fi; cd data
+wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
+wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
+wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCdevkit_08-Jun-2007.tar
+tar xvf VOCtrainval_06-Nov-2007.tar
+tar xvf VOCtest_06-Nov-2007.tar
+tar xvf VOCdevkit_08-Jun-2007.tar
+rm -rf *.tar; cd ../
+```
+
+
+pre Train model 다운 로드 
+```bash
+$ ./data/scripts/fetch_imagenet_models.sh
+```
+
+
 
 ## 3. 테스트
+
