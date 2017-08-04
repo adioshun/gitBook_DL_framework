@@ -38,6 +38,9 @@ Data pre-processing and management : `$CAFFE_ROOT/build/tools`
 - Image cropping, resizing, scaling and mirroring
 - Mean subtraction
 
+
+
+
 ### 1.3 이미지 처리 
 
 Caffe expects the images (i.e. the dataset) to be stored as blob of size (N, C, H, W) 

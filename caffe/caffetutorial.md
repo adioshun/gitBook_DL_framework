@@ -149,12 +149,41 @@ training/testing .prototxt를 네트워크로 Deploy하려면 아래 2 절차를
 
 ### 3.2 Training
 
-* caffe train –solver=solver\_file.prototxt \(Ubuntu: caffe.bin\)
+#### A. cmd로 실행 
+ caffe train –solver=solver\_file.prototxt \(Ubuntu: caffe.bin\)
   - solver models : solver.prototxt 
   - weights data : caffemodel 
 
+#### B. Func.로 실행 : `tools.solvers`
+```python
+# Assuming that the solver .prototxt has already been configured including
+# the corresponding training and testing network definitions (as .prototxt).
+solver = caffe.SGDSolver(prototxt_solver)
+ 
+iterations = 1000 # Depending on dataset size, batch size etc. ...
+for iteration in range(iterations):
+    solver.step(1) # We could also do larger steps (i.e. multiple iterations at once).
+    
+    # Here we could monitor the progress by testing occasionally, 
+    # plotting loss, error, gradients, activations etc.
+
+```
+
+#### C. Solver Configuration : `tools.solvers`
+
+
+#### D. Monitoring : `tools.solvers.MonitoringSolver `
+
+
 
 ### 3.3 Testing
+필요한 두가지 
+- a caffemodel created during training needs
+- a matching deploy .prototxt definition 
+
+Both prerequisites are fulfilled when writing regular snapshots during training and using `tools.prototxt.train2deploy` on the generated `.prototxt` network definitions 
+
+#### A. cmd로 실행 
 
 * Backward propagation없이 forward propagation을 통한 결과값만 출력
 * caffe test –gpu=0 \
@@ -163,9 +192,23 @@ training/testing .prototxt를 네트워크로 Deploy하려면 아래 2 절차를
  - model=net_model.prototxt  #model은 solver가 아닌 net파일을 입력으로 줘야 함
 
 
+#### B. Func.로 실행 
+
+The network can be initialized as follows:
+
+```python
+net = caffe.Net(deploy_prototxt_path, caffemodel_path, caffe.TEST)
+```
+
+The input data can then be set by reshaping the data blob:
+```python
+image = cv2.imread(image_path)
+net.blobs['data'].reshape(1, image.shape[2], image.shape[0], image.shape[1])
+```
+
 ###### lenet\_solver.prototxt
 
-```bash
+```python
 # The train/test net protocol buffer definition 
 net: "examples/mnist/lenet_train_test.prototxt" # Net 구조를 정의한 prototxt 파일
 
