@@ -21,6 +21,7 @@
 
 ### 1.2 기능 
 Data pre-processing and management : `$CAFFE_ROOT/build/tools`
+- Conversion from CSV and Images to LMDB 
 
 #### A. Data ingest formats
 - LevelDB or LMDB database
@@ -33,18 +34,45 @@ Data pre-processing and management : `$CAFFE_ROOT/build/tools`
 - Training and validation set creation with shuffling
 - Mean-image generation
 
-#### C. Data transformations
-Image cropping, resizing, scaling and mirroring
-Mean subtraction
+#### C. Data transformations(`tools.data_augmentation`)
+- Image cropping, resizing, scaling and mirroring
+- Mean subtraction
+
+### 1.3 이미지 처리 
+
+Caffe expects the images (i.e. the dataset) to be stored as blob of size (N, C, H, W) 
+- N being the dataset size
+- C the number of channels
+- H the height of the images 
+- W the width of the images. 
+
+### 1.4 LMDB I/O and Pre-processing
+
+데이터를 LMDB에 넣어 처리 하는것을 선호 
+
+- import lmdb : 
 
 
 
 ## 2. 설치 
 
+- 현재('17.03월) python2 만 지원 
+
+- WITH_PYTHON_LAYER=1 option설치 필요 
+
+- .bashrc 설정 필요 
+
+```bash 
+export OPENBLAS_NUM_THREADS=(4)
+export CAFFE_ROOT=/home/david/caffe
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export PYTHONPATH=/home/david/caffe/python:$PYTHONPATH
+```
+
 참고 : [caffe-installation](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18_caffe_Installation.md)
 
 
-
+- 스크립트 이용하여 설치 : [CPU Only, Ubuntu 14.04](https://github.com/davidstutz/caffe-tools/blob/master/install_caffe.sh)
 
 ## 3. 시각화 (NVIDIA DIGITS)
 

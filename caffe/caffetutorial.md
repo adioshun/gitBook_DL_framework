@@ -55,14 +55,106 @@ Training/Testing을 위해 보통 두 가지 파일을 정의함
 
 ## 3. 실행
 
-#### A. Training
+### 3.1 네트워크 정의 
+
+#### A. 첫번쨰 방법 
+```python
+def iris_network(lmdb_path, batch_size):
+    """
+    Simple network for Iris classification.
+    
+    :param lmdb_path: path to LMDB to use (train or test LMDB)
+    :type lmdb_path: string
+    :param batch_size: batch size to use
+    :type batch_size: int
+    :return: the network definition as string to write to the prototxt file
+    :rtype: string
+    """
+        
+    net = caffe.NetSpec()
+    net.data, net.labels = caffe.layers.Data(batch_size = batch_size, backend = caffe.params.Data.LMDB, source = lmdb_path, ntop = 2)
+    net.data_aug = caffe.layers.Python(net.data, python_param = dict(module = 'tools.layers', layer = 'DataAugmentationRandomMultiplicativeNoiseLayer'))
+    net.labels_aug = caffe.layers.Python(net.labels,python_param = dict(module = 'tools.layers', layer = 'DataAugmentationDuplicateLabelsLayer'))
+    net.fc1 = caffe.layers.InnerProduct(net.data_aug, num_output = 12,bias_filler = dict(type = 'xavier', std = 0.1),weight_filler = dict(type = 'xavier', std = 0.1))
+    net.sigmoid1 = caffe.layers.Sigmoid(net.fc1)
+    net.fc2 = caffe.layers.InnerProduct(net.sigmoid1, num_output = 3,bias_filler = dict(type = 'xavier', std = 0.1),weight_filler = dict(type = 'xavier', std = 0.1))
+    net.score = caffe.layers.Softmax(net.fc2)
+    net.loss = caffe.layers.MultinomialLogisticLoss(net.score, net.labels_aug)
+        
+    return net.to_proto()
+```
+
+
+#### B. 두번쨰 방법 
+```python 
+def mnist_network(lmdb_path, batch_size):
+    """
+    Convolutional network for MNIST classification.
+    
+    :param lmdb_path: path to LMDB to use (train or test LMDB)
+    :type lmdb_path: string
+    :param batch_size: batch size to use
+    :type batch_size: int
+    :return: the network definition as string to write to the prototxt file
+    :rtype: string
+    """
+        
+    net = caffe.NetSpec()
+        
+    net.data, net.labels = caffe.layers.Data(batch_size = batch_size, 
+                                             backend = caffe.params.Data.LMDB, 
+                                             source = lmdb_path, 
+                                             transform_param = dict(scale = 1./255), 
+                                             ntop = 2)
+    
+    net.augmented_data = caffe.layers.Python(net.data, python_param = dict(module = 'tools.layers', layer = 'DataAugmentationMultiplicativeGaussianNoiseLayer'))
+    net.augmented_labels = caffe.layers.Python(net.labels, python_param = dict(module = 'tools.layers', layer = 'DataAugmentationDoubleLabelsLayer'))
+    
+    net.conv1 = caffe.layers.Convolution(net.augmented_data, kernel_size = 5, num_output = 20, weight_filler = dict(type = 'xavier'))
+    net.pool1 = caffe.layers.Pooling(net.conv1, kernel_size = 2, stride = 2, pool = caffe.params.Pooling.MAX)
+    net.conv2 = caffe.layers.Convolution(net.pool1, kernel_size = 5, num_output = 50, weight_filler = dict(type = 'xavier'))
+    net.pool2 = caffe.layers.Pooling(net.conv2, kernel_size = 2, stride = 2, pool = caffe.params.Pooling.MAX)
+    net.fc1 =   caffe.layers.InnerProduct(net.pool2, num_output = 500, weight_filler = dict(type = 'xavier'))
+    net.relu1 = caffe.layers.ReLU(net.fc1, in_place = True)
+    net.score = caffe.layers.InnerProduct(net.relu1, num_output = 10, weight_filler = dict(type = 'xavier'))
+    net.loss =  caffe.layers.SoftmaxWithLoss(net.score, net.augmented_labels)
+        
+    return net.to_proto()
+```
+
+#### C. `.prototxt` 포맷으로 네트워크 저장 하기 
+
+```python
+# Set train_prototxt_path, train_lmdb_path and train_batch_size accordingly.
+# Do the same for the test network below.
+with open(train_prototxt_path, 'w') as f:
+    f.write(str(iris_network(train_lmdb_path, train_batch_size)))
+
+with open(test_prototxt_path, 'w') as f:
+    f.write(str(iris_network(test_lmdb_path, test_batch_size)))
+
+#Custom Layer를 작성시는 force_backward 설정을 해주어야 함 
+with open(train_prototxt_path, 'w') as f:
+    f.write('force_backward: true\n') # For the MNIST network it is not necessary, but for illustration purposes ...
+    f.write(str(mnist_network(train_lmdb_path, train_batch_size))) 
+
+```
+
+#### D. Deploying Networks
+training/testing .prototxt를 네트워크로 Deploy하려면 아래 2 절차를 수행 하여야 함 
+- Eliminating the LMDB input layer;
+- Removing the loss layer.
+
+> This transformation can be automated by `tools.prototxt.train2deploy`.
+
+### 3.2 Training
 
 * caffe train –solver=solver\_file.prototxt \(Ubuntu: caffe.bin\)
   - solver models : solver.prototxt 
   - weights data : caffemodel 
 
 
-#### B. Testing
+### 3.3 Testing
 
 * Backward propagation없이 forward propagation을 통한 결과값만 출력
 * caffe test –gpu=0 \
