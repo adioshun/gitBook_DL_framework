@@ -150,9 +150,28 @@ training/testing .prototxt를 네트워크로 Deploy하려면 아래 2 절차를
 ### 3.2 Training
 
 #### A. cmd로 실행 
- caffe train –solver=solver\_file.prototxt \(Ubuntu: caffe.bin\)
-  - solver models : solver.prototxt 
-  - weights data : caffemodel 
+
+```python 
+# train LeNet
+caffe train -solver examples/mnist/lenet_solver.prototxt
+
+# train on GPU 2
+caffe train -solver examples/mnist/lenet_solver.prototxt -gpu 2
+
+# resume training from the half-way point snapshot
+caffe train -solver lenet_solver.prototxt -snapshot lenet_iter_5000.solverstate
+
+# fine-tune CaffeNet model weights for style recognition
+caffe train -solver finetuning/solver.prototxt -weights reference_caffenet.caffemodel
+
+```
+
+- 학습 시는 `-solver solver.prototxt `로 solver 지정 필수 
+
+- snapshot이용시 `-snapshot lenet_iter_5000.solverstate` 지정 필요 
+
+- 파인 튜닝시, 모델 초기화를 위한 `-weights model.caffemodel ` 지정 필요 
+
 
 #### B. Func.로 실행 : `tools.solvers`
 ```python
@@ -185,8 +204,12 @@ Both prerequisites are fulfilled when writing regular snapshots during training 
 
 #### A. cmd로 실행 
 
-* Backward propagation없이 forward propagation을 통한 결과값만 출력
-* caffe test –gpu=0 \
+
+```python
+# score the learned LeNet model on the validation set as defined in the
+# model architeture lenet_train_test.prototxt
+caffe test -model lenet_train_test.prototxt -weights lenet_iter_10000.caffemodel -iterations 100
+```
  - iterations=100 \ #iterations 옵션만큼 iteration 수행
  - weights=weight_file.caffemodel \ # 미리 학습된 weight 파일 (.caffemodel 확장자)
  - model=net_model.prototxt  #model은 solver가 아닌 net파일을 입력으로 줘야 함
@@ -205,6 +228,20 @@ The input data can then be set by reshaping the data blob:
 image = cv2.imread(image_path)
 net.blobs['data'].reshape(1, image.shape[2], image.shape[0], image.shape[1])
 ```
+
+
+
+- `caffe.Net` is the central interface for loading, configuring, and running models. -
+
+- `caffe.Classifier` and `caffe.Detector` provide convenience interfaces for common tasks.
+
+- `caffe.SGDSolver` exposes the solving interface.
+
+- `caffe.io` handles input / output with preprocessing and protocol buffers.
+
+- `caffe.draw` visualizes network architectures.
+
+- Caffe blobs are exposed as numpy ndarrays for ease-of-use and efficiency.
 
 ###### lenet\_solver.prototxt
 
