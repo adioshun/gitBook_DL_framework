@@ -108,7 +108,20 @@ monitoring_solver.solve(args.iterations)
 
 ```
 
+여러 snippets
+
+- Get Layer Names
+- Copy Weights
+- Create a Snapshot
+- Get Batch Size
+- Get the Loss
+- Compute Gradient Magnitude
+- Silencing Caffe Logging
+
 > 출처 : [pyCaffe Tools, Examples and Resources](http://davidstutz.de/pycaffe-tools-examples-and-resources/#deploy)
+
+
+## 6. 기타 
+
 ---
 
-- [pyCaffe Tools, Examples and Resources](http://davidstutz.de/pycaffe-tools-examples-and-resources/)
