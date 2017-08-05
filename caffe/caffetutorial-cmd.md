@@ -53,12 +53,11 @@ Training/Testing을 위해 보통 두 가지 파일을 정의함
 
 > 확장자가 .prototxt로 Google [Protocol Buffers](https://developers.google.com/protocol-buffers/) 기반
 
-## 네트워크 정의 
+## 3. 실행
 
+### 3.1 네트워크 정의 
 
-
-### 3.1 첫번쨰 방법 
-
+#### A. 첫번쨰 방법 
 ```python
 def iris_network(lmdb_path, batch_size):
     """
@@ -86,7 +85,7 @@ def iris_network(lmdb_path, batch_size):
 ```
 
 
-### 3.1 두번쨰 방법 
+#### B. 두번쨰 방법 
 ```python 
 def mnist_network(lmdb_path, batch_size):
     """
@@ -148,7 +147,103 @@ training/testing .prototxt를 네트워크로 Deploy하려면 아래 2 절차를
 
 > This transformation can be automated by `tools.prototxt.train2deploy`.
 
+### 3.2 Training
 
+#### A. cmd로 실행 
+
+```python 
+# train LeNet
+caffe train -solver examples/mnist/lenet_solver.prototxt
+
+# train on GPU 2
+caffe train -solver examples/mnist/lenet_solver.prototxt -gpu 2
+
+# resume training from the half-way point snapshot
+caffe train -solver lenet_solver.prototxt -snapshot lenet_iter_5000.solverstate
+
+# fine-tune CaffeNet model weights for style recognition
+caffe train -solver finetuning/solver.prototxt -weights reference_caffenet.caffemodel
+
+```
+
+- 학습 시는 `-solver solver.prototxt `로 solver 지정 필수 
+
+- snapshot이용시 `-snapshot lenet_iter_5000.solverstate` 지정 필요 
+
+- 파인 튜닝시, 모델 초기화를 위한 `-weights model.caffemodel ` 지정 필요 
+
+
+> [pycaffe로 fine-tuning하기(K)](http://yochin47.blogspot.com/2016/03/pycaffe-fine-tuning.html)
+
+#### B. Func.로 실행 : `tools.solvers`
+```python
+# Assuming that the solver .prototxt has already been configured including
+# the corresponding training and testing network definitions (as .prototxt).
+solver = caffe.SGDSolver(prototxt_solver)
+ 
+iterations = 1000 # Depending on dataset size, batch size etc. ...
+for iteration in range(iterations):
+    solver.step(1) # We could also do larger steps (i.e. multiple iterations at once).
+    
+    # Here we could monitor the progress by testing occasionally, 
+    # plotting loss, error, gradients, activations etc.
+
+```
+
+#### C. Solver Configuration : `tools.solvers`
+
+
+#### D. Monitoring : `tools.solvers.MonitoringSolver `
+
+
+
+### 3.3 Testing
+필요한 두가지 
+- a caffemodel created during training needs
+- a matching deploy .prototxt definition 
+
+Both prerequisites are fulfilled when writing regular snapshots during training and using `tools.prototxt.train2deploy` on the generated `.prototxt` network definitions 
+
+#### A. cmd로 실행 
+
+
+```python
+# score the learned LeNet model on the validation set as defined in the
+# model architeture lenet_train_test.prototxt
+caffe test -model lenet_train_test.prototxt -weights lenet_iter_10000.caffemodel -iterations 100
+```
+ - iterations=100 \ #iterations 옵션만큼 iteration 수행
+ - weights=weight_file.caffemodel \ # 미리 학습된 weight 파일 (.caffemodel 확장자)
+ - model=net_model.prototxt  #model은 solver가 아닌 net파일을 입력으로 줘야 함
+
+
+#### B. Func.로 실행 
+
+The network can be initialized as follows:
+
+```python
+net = caffe.Net(deploy_prototxt_path, caffemodel_path, caffe.TEST)
+```
+
+The input data can then be set by reshaping the data blob:
+```python
+image = cv2.imread(image_path)
+net.blobs['data'].reshape(1, image.shape[2], image.shape[0], image.shape[1])
+```
+
+
+
+- `caffe.Net` is the central interface for loading, configuring, and running models. -
+
+- `caffe.Classifier` and `caffe.Detector` provide convenience interfaces for common tasks.
+
+- `caffe.SGDSolver` exposes the solving interface.
+
+- `caffe.io` handles input / output with preprocessing and protocol buffers.
+
+- `caffe.draw` visualizes network architectures.
+
+- Caffe blobs are exposed as numpy ndarrays for ease-of-use and efficiency.
 
 ###### lenet\_solver.prototxt
 
