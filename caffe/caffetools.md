@@ -144,4 +144,4 @@ ax2.set_title('Custom Test Accuracy: {:.2f}'.format(test_acc[-1]))
 
 ```
 
-> 전체 코드 : [https://github.com/BVLC/caffe/blob/master/examples/01-learning-lenet.ipynb](https://github.com/BVLC/caffe/blob/master/examples/01-learning-lenet.ipynb)의 마지막 부분 
+> 전체 코드 : [01-learning-lenet.ipynb](https://github.com/BVLC/caffe/blob/master/examples/01-learning-lenet.ipynb)의 마지막 부분 

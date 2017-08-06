@@ -1,3 +1,7 @@
+![](http://i.imgur.com/5k7t1MK.png)
+
+> [수정하기](https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=caffe_pipeline.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fadioshun%2FgitBook_DL_framework%2Fmaster%2Fcaffe%2Fcaffe_pipeline.xml)
+
 ## 1. 데이터 전처리
 
 > [caffe framework 데이터 셋팅하기](http://blog.naver.com/sogangori/220461170655)
