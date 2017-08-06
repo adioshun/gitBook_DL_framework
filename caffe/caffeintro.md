@@ -88,3 +88,6 @@ export PYTHONPATH=/home/david/caffe/python:$PYTHONPATH
 - [Fully Convilutional Layer-pixelwise prediction](http://tutorial.caffe.berkeleyvision.org/caffe-cvpr15-pixels.pdf): pdf
 
 - [CS231n](https://github.com/adioshun/gitBook_DL_framework/blob/master/caffe/CS231n%20Caffe%20Tutorial.pdf)
+
+
+https://youtu.be/Qynt-TxAPOs
