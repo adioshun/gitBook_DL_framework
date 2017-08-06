@@ -1,11 +1,10 @@
-### 3.2 Training
+## 1. Training
 
 | 함수명 | 기능 | 예제 |
 | --- | --- | --- |
 | SGDSolver\(\) | 학습 | `solver = caffe.SGDSolver(prototxt_solver)` |
 |  |  |  |
 
-#### B. Func.로 실행 : `tools.solvers`
 
 ```python
 # Assuming that the solver .prototxt has already been configured including
@@ -24,7 +23,7 @@ for iteration in range(iterations):
 
 #### D. Monitoring : `tools.solvers.MonitoringSolver`
 
-### 3.3 Testing
+## 2. Testing
 
 | 함수명 | 기능 | 예제 |
 | --- | --- | --- |
@@ -62,6 +61,34 @@ net.blobs['data'].reshape(1, image.shape[2], image.shape[0], image.shape[1])
 * `caffe.draw` visualizes network architectures.
 
 * Caffe blobs are exposed as numpy ndarrays for ease-of-use and efficiency.
+
+
+## 3. 이미지 전처리 
+Before checking the net let's define an input pre-processor, transformer, to help feed an image into the net.
+
+```python
+
+
+# configure input pre-processing
+mu = np.load(caffe_root + 'python/caffe/imagenet/ilsvrc_2012_mean.npy')
+mu = mu.mean(1).mean(1)  # average over pixels to obtain the mean (BGR) pixel values
+transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})
+transformer.set_transpose('data', (2,0,1))  # move image channels to outermost dimension
+transformer.set_mean('data', mu)            # subtract the dataset-mean value in each channel
+transformer.set_raw_scale('data', 255)      # rescale from [0, 1] to [0, 255]
+transformer.set_channel_swap('data', (2,1,0))  # swap channels from RGB to BGR
+print 'Configured input.'
+
+```
+이후 작업 코드 
+
+```python 
+# download an image
+image = caffe.io.load_image(caffe_root + 'examples/images/coffee.jpg')
+transformed_image = transformer.preprocess('data', image)
+plt.imshow(image)
+```
+
 
 ---
 
