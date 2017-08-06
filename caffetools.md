@@ -101,3 +101,14 @@ training/testing .prototxt 파일로 네트워크를 Deply하려면 입력 LMDB 
 - This transformation can be automated by `tools.prototxt.train2deploy`
 
 
+## 4. Visualization 
+
+## 4.1 네트워크 모델 그래프로 그리기 
+
+- draw_net.py 이용 
+
+```python 
+python ./tools/caffe_tool_draw_net.py ./models/conv.prototxt ./models/my_net.png
+from IPython.display import Image 
+Image(filename='./models/my_net.png')
+```
