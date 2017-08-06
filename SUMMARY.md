@@ -24,10 +24,13 @@
 
 * [caffe\_Intro\_설치](caffe/caffeintro.md)
 * [caffe\_tutorial](caffe/caffetutorial.md)
+  * [solver.prototxt](caffe/caffetutorial/solverprototxt.md)
+  * [network.prototxt](caffe/caffetutorial/networkprototxt.md)
 * [caffe\_Tutorial\_cmd](caffe/caffetutorial-cmd.md)
 * [caffe\_Tutorial\_API](caffe/caffetutorial-api.md)
 * [caffe\_Faster-R-CNN](caffe/caffefaster-r-cnn.md)
 * [caffe\_MNIST](caffe/caffepractice-mnist.md)
 * [caffe\_cifar10](caffe/caffecifar10.md)
+* [caffe\_Tools\(int\)](caffetools.md)
 * [caffe\_Tip](caffe/caffetip.md)
 
