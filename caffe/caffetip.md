@@ -52,6 +52,8 @@ def visualize_kernels(net, layer, zoom = 5):
     return image
 ```
 
+> 중간 처리 과정 시각화 하기 : [Classification: Instant Recognition with Caffe](https://github.com/BVLC/caffe/blob/master/examples/00-classification.ipynb), 마지막 부분 참고 
+
 ## 5. Monitoring
 
 ```python
