@@ -1,71 +1,71 @@
-# caffe 
+# caffe
 
-
-
-## 1. 개요 
+## 1. 개요
 
 > 출처 : Caffe 실습, SNU 패턴 인식 및 컴퓨터 지능 연구실, 박성헌, 황지혜, 유재영
 
-- Caffe : Convolutional Architecture for Fast Feature Embedding
-- Developed by the Berkeley Vision and Learning Center (BVLC)
-- Yangqing Jia, Evan Shelhamer, Travor Darrell
+* Caffe : Convolutional Architecture for Fast Feature Embedding
+* Developed by the Berkeley Vision and Learning Center \(BVLC\)
+* Yangqing Jia, Evan Shelhamer, Travor Darrell
 
-### 1.1 특징 
-- Pure C++/CUDA architecture
-- Command line, Python, MATLAB interfaces
-- Fast, well-tested code
-- Pre-processing and deployment tools, reference models and examples
-- Image data management
-- Seamless GPU acceleration
-- Large community of contributors to the open-source project
+### 1.1 특징
 
-### 1.2 기능 
+* Pure C++/CUDA architecture
+* Command line, Python, MATLAB interfaces
+* Fast, well-tested code
+* Pre-processing and deployment tools, reference models and examples
+* Image data management
+* Seamless GPU acceleration
+* Large community of contributors to the open-source project
+
+### 1.2 기능
+
 Data pre-processing and management : `$CAFFE_ROOT/build/tools`
-- Conversion from CSV and Images to LMDB 
+
+* Conversion from CSV and Images to LMDB 
 
 #### A. Data ingest formats
-- LevelDB or LMDB database
-- In-memory (C++ and Python only)
-- HDF5
-- Image files
+
+* LevelDB or LMDB database
+* In-memory \(C++ and Python only\)
+* HDF5
+* Image files
 
 #### B. Pre-processing tools
-- LevelDB/LMDB creation from raw images
-- Training and validation set creation with shuffling
-- Mean-image generation
 
-#### C. Data transformations(`tools.data_augmentation`)
-- Image cropping, resizing, scaling and mirroring
-- Mean subtraction
+* LevelDB/LMDB creation from raw images
+* Training and validation set creation with shuffling
+* Mean-image generation
 
+#### C. Data transformations\(`tools.data_augmentation`\)
 
+* Image cropping, resizing, scaling and mirroring
+* Mean subtraction
 
+### 1.3 이미지 처리
 
-### 1.3 이미지 처리 
+Caffe expects the images \(i.e. the dataset\) to be stored as blob of size \(N, C, H, W\)
 
-Caffe expects the images (i.e. the dataset) to be stored as blob of size (N, C, H, W) 
-- N being the dataset size
-- C the number of channels
-- H the height of the images 
-- W the width of the images. 
+* N being the dataset size
+* C the number of channels
+* H the height of the images 
+* W the width of the images. 
 
 ### 1.4 LMDB I/O and Pre-processing
 
-데이터를 LMDB에 넣어 처리 하는것을 선호 
+데이터를 LMDB에 넣어 처리 하는것을 선호
 
-- import lmdb : 
+* import lmdb : 
 
+## 2. 설치
 
+* 현재\('17.03월\) python2 만 지원
 
-## 2. 설치 
+* WITH\_PYTHON\_LAYER=1 option설치 필요
 
-- 현재('17.03월) python2 만 지원 
+* .bashrc 설정 필요
 
-- WITH_PYTHON_LAYER=1 option설치 필요 
-
-- .bashrc 설정 필요 
-
-```bash 
+```bash
 export OPENBLAS_NUM_THREADS=(4)
 export CAFFE_ROOT=/home/david/caffe
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
@@ -74,10 +74,13 @@ export PYTHONPATH=/home/david/caffe/python:$PYTHONPATH
 
 참고 : [caffe-installation](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18_caffe_Installation.md)
 
+* 스크립트 이용하여 설치 : [CPU Only, Ubuntu 14.04](https://github.com/davidstutz/caffe-tools/blob/master/install_caffe.sh)
 
-- 스크립트 이용하여 설치 : [CPU Only, Ubuntu 14.04](https://github.com/davidstutz/caffe-tools/blob/master/install_caffe.sh)
+## 3. 시각화 \(NVIDIA DIGITS\)
 
-## 3. 시각화 (NVIDIA DIGITS)
 ---
 
-- [A Practical Introduction to Deep Learning with Caffe](http://www.panderson.me/images/Caffe.pdf): ppt
+* [A Practical Introduction to Deep Learning with Caffe](http://www.panderson.me/images/Caffe.pdf): ppt
+
+
+
