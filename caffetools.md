@@ -91,6 +91,12 @@ for n in range(len(images)):
     print images[n].reshape((4)), labels[n]
 ```
 
+- 참고 script : `examples/imagenet/create_imagenet.sh`
+
+> [Training Multi-Layer Neural Network with Caffe](http://nbviewer.jupyter.org/github/joyofdata/joyofdata-articles/blob/master/deeplearning-with-caffe/Neural-Networks-with-Caffe-on-the-GPU.ipynb)
+
+
+
 ## 2. Data Augmentation
 
 - tools.data_augmentation
@@ -112,3 +118,12 @@ python ./tools/caffe_tool_draw_net.py ./models/conv.prototxt ./models/my_net.png
 from IPython.display import Image 
 Image(filename='./models/my_net.png')
 ```
+
+### 4.2 학습 결과 살펴보기
+
+1. 학습 및 테스트 종료시 로그 파일은 /tmp 에 저장됨 (재 부팅시 삭제 되므로 백업 필요)
+2. tools/extra/plot_training_log.py.example파일 이용하여 결과 그래프로 그리기 
+    - plot_training_log.py.example {0=test, 6=train} {저장이미지 파일명} {입력 로그 파일명}   
+    - eg. plot_training_log.py.example 6 train.png train.log
+    
+> 가끔 이미지 그래프가 직선이 그어지는 오류가 있는데 해당 log파일의 data layer prefetch queue empyt라고 적힌 부분 삭제 

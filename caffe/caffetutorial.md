@@ -1,5 +1,7 @@
 ## 1. 데이터 전처리
 
+> [caffe framework 데이터 셋팅하기](http://blog.naver.com/sogangori/220461170655)
+
 #### A. Dataset 준비하기
 
 * 파일과 라벨을 준비후 아래와 같은 텍스트 파일 만들기
@@ -54,6 +56,8 @@ Training/Testing을 위해 보통 두 가지 파일을 정의함
 > 확장자가 .prototxt로 Google [Protocol Buffers](https://developers.google.com/protocol-buffers/) 기반
 
 ## 3. 네트워크 정의 
+
+네트워크 모델은 Train용 Test용으로 별도로 존재 한다. [[이유??]](http://blog.naver.com/sssmate1/220501116973)
 
 ```python 
 def mnist_network(lmdb_path, batch_size):
