@@ -107,7 +107,9 @@ with open(train_prototxt_path, 'w') as f:
     f.write(str(mnist_network(train_lmdb_path, train_batch_size))) 
 
 ```
-> [참고] [Create your custom python layer](http://christopher5106.github.io/deep/learning/2015/09/04/Deep-learning-tutorial-on-Caffe-Technology.html): 중간 부분 `Create your custom python layer` 챕터 
+> [참고] Custom Layer를 작성
+> - [Deep learning tutorial on Caffe technology ](http://christopher5106.github.io/deep/learning/2015/09/04/Deep-learning-tutorial-on-Caffe-Technology.html): 중간 부분 `Create your custom python layer` 챕터 
+> - [pyCaffe Tools, Examples and Resources](http://davidstutz.de/pycaffe-tools-examples-and-resources/#deploy) : 중간 부분 `Custom Python Layers` 챕터
 
 #### D. Deploying Networks
 training/testing .prototxt를 네트워크로 Deploy하려면 아래 2 절차를 수행 하여야 함 

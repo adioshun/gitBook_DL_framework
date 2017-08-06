@@ -1,5 +1,10 @@
 ### 3.2 Training
 
+|함수명|기능|예제|
+|-|-|-|
+|SGDSolver()|학습|`solver = caffe.SGDSolver(prototxt_solver)`|
+||||
+
 #### B. Func.로 실행 : `tools.solvers`
 ```python
 # Assuming that the solver .prototxt has already been configured including
@@ -23,6 +28,14 @@ for iteration in range(iterations):
 
 
 ### 3.3 Testing
+|함수명|기능|예제|
+|-|-|-|
+|SGDSolver()|학습|`solver = caffe.SGDSolver(prototxt_solver)`|
+||||
+
+
+
+
 필요한 두가지 
 - a caffemodel created during training needs
 - a matching deploy .prototxt definition 
