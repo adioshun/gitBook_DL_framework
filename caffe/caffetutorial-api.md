@@ -42,6 +42,8 @@ The network can be initialized as follows:
 ```python
 net = caffe.Net(deploy_prototxt_path, caffemodel_path, caffe.TEST)
 ```
+- `caffe.TEST` : use test mode (e.g., don't perform dropout)
+
 
 The input data can then be set by reshaping the data blob:
 
@@ -83,6 +85,11 @@ print 'Configured input.'
 이후 작업 코드 
 
 ```python 
+# set the size of the input (we can skip this if we're happy
+net.blobs['data'].reshape(50,        # batch size
+                          3,         # 3-channel (BGR) images
+                          227, 227)  # image size is 227x227
+
 # download an image
 image = caffe.io.load_image(caffe_root + 'examples/images/coffee.jpg')
 transformed_image = transformer.preprocess('data', image)
