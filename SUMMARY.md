@@ -18,6 +18,7 @@
 ## pyTorch
 
 * [pyTorch\_Intro](pytorch/pytorchintro.md)
+* [pyTorch\_Code\_Faster\_R-CNN](pytorchcode-faster-r-cnn.md)
 * [pyTorch\_tools\_Visdom](pytorch/pytorchtools-visdom.md)
 
 ## caffe
@@ -28,8 +29,9 @@
   * [network.prototxt](caffe/caffetutorial/networkprototxt.md)
 * [caffe\_Tutorial\_cmd](caffe/caffetutorial-cmd.md)
 * [caffe\_Tutorial\_API](caffe/caffetutorial-api.md)
-* [caffe\_Faster-R-CNN](caffe/caffefaster-r-cnn.md)
-* [caffe\_cifar10](caffe/caffecifar10.md)
+* [caffe\_Code\_Faster-R-CNN](caffe/caffefaster-r-cnn.md)
+* [caffe\_Code\_Faster-R-CNN+ResNet101](caffe/caffecode-faster-r-cnn+resnet101.md)
+* [caffe\_Code\_cifar10](caffe/caffecifar10.md)
 * [caffe\_Tools\(int\)](caffe/caffetools.md)
 * [caffe\_Tools\_DIGITS](caffe/caffetools-digits.md)
 * [caffe\_Tip](caffe/caffetip.md)
