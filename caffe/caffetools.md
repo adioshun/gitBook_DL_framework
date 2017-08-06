@@ -119,7 +119,7 @@ from IPython.display import Image
 Image(filename='./models/my_net.png')
 ```
 
-### 4.2 학습 결과 살펴보기
+### 4.2 학습 결과 살펴보기 (제공 툴)
 
 1. 학습 및 테스트 종료시 로그 파일은 /tmp 에 저장됨 (재 부팅시 삭제 되므로 백업 필요)
 2. tools/extra/plot_training_log.py.example파일 이용하여 결과 그래프로 그리기 
@@ -127,3 +127,21 @@ Image(filename='./models/my_net.png')
     - eg. plot_training_log.py.example 6 train.png train.log
     
 > 가끔 이미지 그래프가 직선이 그어지는 오류가 있는데 해당 log파일의 data layer prefetch queue empyt라고 적힌 부분 삭제 
+
+### 4.3 학습 결과 살펴보기 (plot)
+
+![](http://i.imgur.com/JDxFeT9.png)
+
+```python
+_, ax1 = subplots()
+ax2 = ax1.twinx()
+ax1.plot(arange(niter), train_loss)
+ax2.plot(test_interval * arange(len(test_acc)), test_acc, 'r')
+ax1.set_xlabel('iteration')
+ax1.set_ylabel('train loss')
+ax2.set_ylabel('test accuracy')
+ax2.set_title('Custom Test Accuracy: {:.2f}'.format(test_acc[-1]))
+
+```
+
+> 전체 코드 : [https://github.com/BVLC/caffe/blob/master/examples/01-learning-lenet.ipynb](https://github.com/BVLC/caffe/blob/master/examples/01-learning-lenet.ipynb)의 마지막 부분 
