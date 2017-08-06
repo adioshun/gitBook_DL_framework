@@ -1,3 +1,8 @@
+|제목|Faster R CNN |
+|-|-|
+|코드|[rbgirshick](https://github.com/rbgirshick/py-faster-rcnn)|
+|참고||
+
 > 출처 : [Faster-R-CNN Install on Ubuntu 16.04\(GTX1080 CUDA 8.0,cuDNN 5.1\)](http://goodtogreate.tistory.com/entry/FasterRCNN-Install-on-Ubuntu-1604GTX1080-CUDA-80cuDNN-51)
 
 # Caffe Faster R CNN Training
