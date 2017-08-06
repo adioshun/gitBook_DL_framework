@@ -32,5 +32,6 @@
 * [caffe\_MNIST](caffe/caffepractice-mnist.md)
 * [caffe\_cifar10](caffe/caffecifar10.md)
 * [caffe\_Tools\(int\)](caffetools.md)
+* [caffe\_Tools\_DIGITS](caffe/caffetools-digits.md)
 * [caffe\_Tip](caffe/caffetip.md)
 

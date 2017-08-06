@@ -76,11 +76,6 @@ export PYTHONPATH=/home/david/caffe/python:$PYTHONPATH
 
 * 스크립트 이용하여 설치 : [CPU Only, Ubuntu 14.04](https://github.com/davidstutz/caffe-tools/blob/master/install_caffe.sh)
 
-## 3. 시각화 \(NVIDIA DIGITS\)
-
----
-
-* [A Practical Introduction to Deep Learning with Caffe](http://www.panderson.me/images/Caffe.pdf): ppt
 
 
 
