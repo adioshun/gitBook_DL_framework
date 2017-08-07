@@ -115,6 +115,12 @@ transformed_image = transformer.preprocess('data', image)
 plt.imshow(image)
 ```
 
+###### [참고] OpenCV 3.3.0버젼부터 DNN지원 
+```python 
+from cv2 import dnn
+blob = dnn.blobFromImage(cv2.imread('space_shuttle.jpg'), 1, (224, 224), (104, 117, 123))
+```
+
 
 ---
 
