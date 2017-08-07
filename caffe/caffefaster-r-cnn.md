@@ -175,3 +175,20 @@ layer {
   }
 }
 ```
+---
+
+# 입력 동영상 변경 
+
+demo.py 
+
+```python 
+    #im_file = os.path.join(cfg.DATA_DIR, 'demo', image_name)
+    im = cv2.imread(image_name)
+
+    im_names = glob.glob('/root/frame/*.jpg')
+    #im_names = ['000456.jpg', '000542.jpg', '001150.jpg',
+    #            '001763.jpg', '004545.jpg']
+```
+
+이미지 저장 위치 :`/root/frame/`
+저장 폴더 미리 생성 : `/workspace/py-faster-rcnn/tools/demo_results/root/frame`
