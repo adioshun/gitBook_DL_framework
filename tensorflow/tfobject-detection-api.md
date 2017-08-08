@@ -1,5 +1,12 @@
 # Tensorflow Object Detection API 
 
+- [Basic Tutorial](https://github.com/tensorflow/models/blob/master/object_detection/object_detection_tutorial.ipynb): Jupyter, 학습된 모델을 Load하여 이미지 내 물체 예측 
+
+- [Quick Start: Distributed Training on the Oxford-IIIT Pets Dataset on Google Cloud](https://github.com/tensorflow/models/blob/master/object_detection/g3doc/running_pets.md):   object detector 학습 방법 소개, **Transfer Learning**
+
+- [Configuring the Object Detection Training Pipeline](https://github.com/tensorflow/models/blob/master/object_detection/g3doc/configuring_jobs.md): 학습 관련 설정 변경 
+
+
 # 1. 개요
 > 출처 : [홈페이지](https://github.com/tensorflow/models/tree/master/object_detection), [GOOD to GREAT](http://goodtogreate.tistory.com/entry/Tensorflow-Object-Detection-API-SSD-FasterRCNN)
 
