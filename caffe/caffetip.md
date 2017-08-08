@@ -15,6 +15,9 @@
 > - [Fine-tuning CaffeNet for Style Recognition on “Flickr Style” Data](http://caffe.berkeleyvision.org/gathered/examples/finetune_flickr_style.html): [[번역]](http://hamait.tistory.com/520)
 > - [pycaffe로 fine-tuning하기](http://yochin47.blogspot.com/2016/03/pycaffe-fine-tuning.html)
 > - [Resume_Finetuning](http://blog.naver.com/sssmate1/220503752763)
+> - [Use Faster RCNN and ResNet codes for object detection and image classification with your own training data](https://realwecan.blogspot.com/2016/11/use-faster-rcnn-and-resnet-codes-for.html)
+
+
 
 ![](http://i.imgur.com/OXAJisv.png)
 

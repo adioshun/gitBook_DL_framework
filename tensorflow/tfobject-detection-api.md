@@ -24,7 +24,7 @@
 
 [설치 방법](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-08-08-TF%20Object%20Detection%20API_Installation.md)
 
-## 3. 실행 
+## 3. 테스트 
 
 > 튜토리얼 : [./object detection/object_detection_tutorial.ipynb](https://github.com/tensorflow/models/blob/master/object_detection/object_detection_tutorial.ipynb)
 
@@ -41,6 +41,10 @@ export_inference_graph.py 파일 실행시 필요한 parameter 의 이름이 바
 - checkpoint_path -> trained_checkpoint_prefix 
 - inference_graph_path -> output_directory 
 - `python object_detection/export_inference_graph \` 가 아니라 `python object_detection/export_inference_graph.py \` 입니다.
+
+
+
+## 4. 학습 
 
 
 ---
