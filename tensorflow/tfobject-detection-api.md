@@ -1,7 +1,7 @@
 # Tensorflow Object Detection API 
 
 # 1. 개요
-> 출처 : [GOOD to GREAT](http://goodtogreate.tistory.com/entry/Tensorflow-Object-Detection-API-SSD-FasterRCNN)
+> 출처 : [홈페이지](https://github.com/tensorflow/models/tree/master/object_detection), [GOOD to GREAT](http://goodtogreate.tistory.com/entry/Tensorflow-Object-Detection-API-SSD-FasterRCNN)
 
 
 2017.06.15월 공개 
@@ -15,42 +15,7 @@
 
 # 2. 설치 
 
->ubunutu 16.4, python3, tf 1.2
-
-패키지 설치 
-```bash
-sudo apt-get install protobuf-compiler python-pil python-lxml 
-sudo pip install matplotlib pillow lxml 
-
-```
-
-소스 다운로드 
-```bash 
-git clone https://github.com/tensorflow/models.git
-```
-
-Protobuf 컴파일 
-```bash
-# From tensorflow/models/
-protoc object_detection/protos/*.proto --python_out=.
-```
-
-Add Libraries to PYTHONPATH : slim 디렉터리를 append시키기 위함이다.
-```bash
-# From tensorflow/models/
-export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
-```
-
-설치 확인 
-```bash 
-python object_detection/builders/model_builder_test.py
-
-.......
-----------------------------------------------------------------------
-Ran 7 tests in 0.013s
-
-OK
-```
+[설치 방법](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-08-08-TF%20Object%20Detection%20API_Installation.md)
 
 ## 3. 실행 
 
