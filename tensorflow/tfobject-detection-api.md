@@ -43,3 +43,12 @@ export_inference_graph.py 파일 실행시 필요한 parameter 의 이름이 바
 - `python object_detection/export_inference_graph \` 가 아니라 `python object_detection/export_inference_graph.py \` 입니다.
 
 
+---
+수정 
+http://35.196.214.92:8585/notebooks/models/object_detection/object_detection_tutorial.ipynb#
+```
+TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'frame{}.jpg'.format(i)) for i in range(1, 9999) ]
+#plt.imshow(image_np)
+plt.savefig('./save/{}.png'.format(image_path))
+#plt.savefig('./save/plot.png')
+```
