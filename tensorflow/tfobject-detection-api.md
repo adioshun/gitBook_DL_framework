@@ -34,7 +34,7 @@
 
 > 튜토리얼 : [./object detection/object_detection_tutorial.ipynb](https://github.com/tensorflow/models/blob/master/object_detection/object_detection_tutorial.ipynb)
 
-> 참고 : [How to train your own Object Detector with TensorFlow’s Object Detector API](https://medium.com/towards-data-science/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9)
+
 
 
 
@@ -52,6 +52,59 @@ export_inference_graph.py 파일 실행시 필요한 parameter 의 이름이 바
 
 ## 4. 학습 
 
+
+## 5. 다른 데이터 이용하여 학습 하기 
+
+> [How to train your own Object Detector with TensorFlow’s Object Detector API](https://medium.com/towards-data-science/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9)
+
+
+### 5.1 데이터 준비 
+
+- TFRecord을 입력으로 사용함 (eg.  PASCAL VOC datasetZ)
+
+    - 이미지 : JPG, PNG
+    
+    - LIST : (X_min, Y_min, X_max, Y_max) + (Label)
+    
+- TFRecord Conver Tools 제공 : [`create_pascal_tf_record.py`](https://github.com/tensorflow/models/blob/master/object_detection/create_pascal_tf_record.py)
+    
+    -  [[LanelImg]](https://github.com/tzutalin/labelImg)라는 이미지 라벨링 툴을 이용하여 수작업 하여 PASCAL형태의 XML로 저장 가능, 
+    
+    -  `PASCAL형태의 XML`을 제공하는 Convert Tool을 이용하여 TFRecord으로 변환 
+    
+    - 참고 : Raccoon 이미지를 변환 하는 [3rd party](https://github.com/datitran/raccoon-dataset) 스크립트(XML - CSV - TFRecord) 
+    
+> 이미지 크기는 300~500 pixels추천(???) -> OOM문제 발생, Batch-size조절로 가능 
+
+###### 참고: Labeling Tools , Service 
+|구분|이름|특징|
+|-|-|-|
+|Tool|[LanelImg](https://github.com/tzutalin/labelImg)||
+|Tool|[FIAT (Fast Image Data Annotation Tool)](https://github.com/christopher5106/FastAnnotationTool)||
+|Service|[CrowdFlower](https://www.crowdflower.com/)||
+|Service|[CrowdAI ](https://crowdai.com/)||
+|Service|[Amazon’s Mechanical Turk](https://www.mturk.com/mturk/welcome)||
+
+
+### 5.2 Training Config 파일 수정 
+- num_class : eg. 클래스가 하나 이면 1
+- PATH : Train data PATH, Test data PATH, label map PATH
+    - label map : *.pbtxt파일, id + name 으로 구성 (중요 : id는 항상 1부터 시작)
+- eg. [Sample config](https://github.com/tensorflow/models/tree/master/object_detection/samples/configs), [Sample label map](https://github.com/tensorflow/models/tree/master/object_detection/data)
+
+### 5.3 Train 
+
+#### A. Local 학습 
+
+- [Running Locally](https://github.com/tensorflow/models/blob/master/object_detection/g3doc/running_locally.md)
+
+#### B. Cloud 학습 
+
+- [Running on Google Cloud Platform](https://github.com/tensorflow/models/blob/master/object_detection/g3doc/running_on_cloud.md)
+
+### 5.4 Export Model 
+
+- Script 이용 : [Exporting a trained model for inference](https://github.com/tensorflow/models/blob/master/object_detection/g3doc/exporting_models.md) 
 
 ---
 수정 
