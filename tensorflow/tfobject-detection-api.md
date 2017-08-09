@@ -92,6 +92,8 @@ export_inference_graph.py 파일 실행시 필요한 parameter 의 이름이 바
     - label map : *.pbtxt파일, id + name 으로 구성 (중요 : id는 항상 1부터 시작)
 - eg. [Sample config](https://github.com/tensorflow/models/tree/master/object_detection/samples/configs), [Sample label map](https://github.com/tensorflow/models/tree/master/object_detection/data)
 
+> 상세 설명 : [Configuring the Object Detection Training Pipeline](https://github.com/tensorflow/models/blob/master/object_detection/g3doc/configuring_jobs.md)
+
 ### 5.3 Train 
 
 #### A. Local 학습 
