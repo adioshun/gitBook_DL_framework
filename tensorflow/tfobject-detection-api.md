@@ -60,11 +60,15 @@ export_inference_graph.py 파일 실행시 필요한 parameter 의 이름이 바
 
 ### 5.1 데이터 준비 
 
+
+
 - TFRecord을 입력으로 사용함 (eg.  PASCAL VOC datasetZ)
 
-    - 이미지 : JPG, PNG
+    - images.tar.gz : 이미지(JPG, PNG)
     
-    - LIST : (X_min, Y_min, X_max, Y_max) + (Label)
+    - annotations.tar.gz : LIST(X_min, Y_min, X_max, Y_max) + (Label)
+    
+![](http://i.imgur.com/HfGjktp.png)
     
 - TFRecord Conver Tools 제공 : [`create_pascal_tf_record.py`](https://github.com/tensorflow/models/blob/master/object_detection/create_pascal_tf_record.py)
     
@@ -73,6 +77,16 @@ export_inference_graph.py 파일 실행시 필요한 parameter 의 이름이 바
     -  `PASCAL형태의 XML`을 제공하는 Convert Tool을 이용하여 TFRecord으로 변환 
     
     - 참고 : Raccoon 이미지를 변환 하는 [3rd party](https://github.com/datitran/raccoon-dataset) 스크립트(XML - CSV - TFRecord) 
+  
+- 저장 위치 : `tensorflow/models`
+```
+- images.tar.gz
+- annotations.tar.gz
++ images/
++ annotations/
++ object_detection/
+... other files and directories
+```
     
 > 이미지 크기는 300~500 pixels추천(???) -> OOM문제 발생, Batch-size조절로 가능 
 
