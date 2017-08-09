@@ -140,7 +140,7 @@ python object_detection/create_pascal_tf_record.py \
 |Service|[Amazon’s Mechanical Turk](https://www.mturk.com/mturk/welcome)||
 
 
-### 5.2 Training Config 파일 수정 
+### 5.2 Config 파일 수정 
 
 *.Config파일에 `model parameters`, `training parameters` and `eval parameters` 모두 포함하고 있음 
 
@@ -218,7 +218,7 @@ tensorboard --logdir=${PATH_TO_MODEL_DIRECTORY}
 
 - [Starting Training and Evaluation Jobs on Google Cloud ML Engine](https://github.com/tensorflow/models/blob/master/object_detection/g3doc/running_pets.md#starting-training-and-evaluation-jobs-on-google-cloud-ml-engine)
 
-### 56.4 Export Model 
+### 5.4 Export Model 
 
 - 학습시 생성된 `checkpoint`파일을 `Tensorflow graph proto` 형태로 export가능 
 
