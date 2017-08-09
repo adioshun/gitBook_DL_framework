@@ -1,21 +1,6 @@
 # caffe_Tip
 
-## 1. Training을 중간에 멈춘 뒤 이어서 하고 싶을때(Resume the training)
 
-Training을 하다가 잠시 중단하다가 다시 실행할 때
-    * Snapshot으로 남겨둔 solverstate파일을 이용 \(-snapshot 옵션\)
-
-
-
-```bash
-./build/tools/caffe train \
-    --solver=solver.prototxt \
-    --snapshot=caffenet_train_iter_10000.solverstate
-```
-- `--solver=solver.prototxt`: 옵션 solver와 solver가 작동시킬 prototxt 파일입니다.
-- `--snapshot=caffenet_train_iter_10000.solverstate`: 어디서부터 시작할지를 나타내는 옵션 
-
-원리는 solverstate를 확장자로 가지는 파일에서 weight와 iteration 관련 정보를 가져오고, 해당하는 iteration부터 다시 training을 시작합니다.
 
 
 
