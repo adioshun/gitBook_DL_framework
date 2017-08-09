@@ -60,24 +60,44 @@ export_inference_graph.py 파일 실행시 필요한 parameter 의 이름이 바
 
 ### 5.1 데이터 준비 
 
-
-
-- TFRecord을 입력으로 사용함 (eg.  PASCAL VOC datasetZ)
+TFRecord을 입력으로 사용함 (eg.  PASCAL VOC datasetZ)
 
     - images.tar.gz : 이미지(JPG, PNG)
     
     - annotations.tar.gz : LIST(X_min, Y_min, X_max, Y_max) + (Label)
     
 ![](http://i.imgur.com/HfGjktp.png)
+
     
-- TFRecord Conver Tools 제공 : [`create_pascal_tf_record.py`](https://github.com/tensorflow/models/blob/master/object_detection/create_pascal_tf_record.py)
+###### Step 1. 이미지 준비 
+
+      
+###### Step 2. 수작업으로 라벨링 진행 
+
+- [[LanelImg]](https://github.com/tzutalin/labelImg)라는 이미지 라벨링 툴을 이용
+
+- PASCAL형태의 XML로 저장 
+
+###### Step 3. Convert Tools 이용 TFRecord 변경 
+                
+- [`create_pascal_tf_record.py`](https://github.com/tensorflow/models/blob/master/object_detection/create_pascal_tf_record.py)
+
+``` bash
+# From tensorflow/models/
+python object_detection/create_pet_tf_record.py \
+    --label_map_path=object_detection/data/pet_label_map.pbtxt \
+    --data_dir=`pwd` \
+    --output_dir=`pwd`
+```
+
     
-    -  [[LanelImg]](https://github.com/tzutalin/labelImg)라는 이미지 라벨링 툴을 이용하여 수작업 하여 PASCAL형태의 XML로 저장 가능, 
     
-    -  `PASCAL형태의 XML`을 제공하는 Convert Tool을 이용하여 TFRecord으로 변환 
+- 참고 : Raccoon 이미지를 변환 하는 [3rd party](https://github.com/datitran/raccoon-dataset) 스크립트(XML - CSV - TFRecord) 
+
+ 
+###### Step 4. 작업 위치로 이동 
     
-    - 참고 : Raccoon 이미지를 변환 하는 [3rd party](https://github.com/datitran/raccoon-dataset) 스크립트(XML - CSV - TFRecord) 
-  
+        
 - 저장 위치 : `tensorflow/models`
 ```
 - images.tar.gz
