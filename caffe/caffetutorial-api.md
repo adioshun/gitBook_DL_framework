@@ -42,6 +42,7 @@ for it in range(niter):
 
 
 
+
 ## 2. Testing
 
 | 함수명 | 기능 | 예제 |
@@ -86,7 +87,15 @@ net.blobs['data'].reshape(1, image.shape[2], image.shape[0], image.shape[1])
 * Caffe blobs are exposed as numpy ndarrays for ease-of-use and efficiency.
 
 
-## 3. 이미지 전처리 
+## 3. Fine tuning 
+
+> [fine-tuning.ipynb](http://nbviewer.jupyter.org/github/BVLC/caffe/blob/tutorial/examples/03-fine-tuning.ipynb)
+
+
+
+
+
+## 4. 이미지 전처리 
 Before checking the net let's define an input pre-processor, transformer, to help feed an image into the net.
 
 ```python
