@@ -7,10 +7,26 @@
 
 ## 2. Fine tuning / Transfer learning
 
-* Pre-trained model을 이용하는 방법
-* Snapshot으로 남겨둔 caffemodel파일을 이용 \(-weights 옵션\)
-* caffe train –solver=solver.prototxt –weights=lenet\_iter\_5000.caffemodel
+```python 
+caffe train \
+    -solver finetuning/solver.prototxt \
+    -weights reference_caffenet.caffemodel
+```
+
+* -weights 옵션 : Snapshot으로 남겨둔 caffemodel파일을 이용 \
+
+
+
 * Layer 이름을 비교해서 이름이 같은 Layer는 caffemodel파일에서 미리 training된 weight를 가져오고 새로운 layer는 새로 initialization을 해서 학습함.
+
+
+### 2.1 prototxt  수정 
+- FCN에서 분류 목적 (1,000개 분류 -> 20개 분류)따라 수정 
+
+### 2.2 solver.prototxt 수정
+- 학습(`base_lr`)률 수치 줄이기. 단, 새로 추가된 레이어의 `lr_mult`는 boost하기 
+    - 목적 : 기존 모델은 새 데이터에 대해 천천히 반응(바뀌고)하고, 새로 추가된 레이어는 빠르게 학습하게 하기 위해 
+
 
 > - [Fine-tuning CaffeNet for Style Recognition on “Flickr Style” Data](http://caffe.berkeleyvision.org/gathered/examples/finetune_flickr_style.html): [[번역]](http://hamait.tistory.com/520)
 > - [pycaffe로 fine-tuning하기](http://yochin47.blogspot.com/2016/03/pycaffe-fine-tuning.html)

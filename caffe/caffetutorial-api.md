@@ -49,14 +49,14 @@ for it in range(niter):
 | SGDSolver\(\) | 학습 | `solver = caffe.SGDSolver(prototxt_solver)` |
 |  |  |  |
 
-필요한 두가지
+### 2.1 사전 요구 파일 
 
 * a caffemodel created during training needs
 * a matching deploy .prototxt definition 
 
 Both prerequisites are fulfilled when writing regular snapshots during training and using `tools.prototxt.train2deploy` on the generated `.prototxt` network definitions
 
-The network can be initialized as follows:
+### 2.2 Network 초기화 
 
 ```python
 net = caffe.Net(deploy_prototxt_path, caffemodel_path, caffe.TEST)
@@ -64,7 +64,9 @@ net = caffe.Net(deploy_prototxt_path, caffemodel_path, caffe.TEST)
 - `caffe.TEST` : use test mode (e.g., don't perform dropout)
 
 
-The input data can then be set by reshaping the data blob:
+### 2.3 입력 파일 설정
+
+ The input data can then be set by reshaping the data blob:
 
 ```python
 image = cv2.imread(image_path)

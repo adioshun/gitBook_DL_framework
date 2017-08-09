@@ -19,7 +19,7 @@ caffe train -solver finetuning/solver.prototxt -weights reference_caffenet.caffe
 
 - snapshot이용시 `-snapshot lenet_iter_5000.solverstate` 지정 필요 
 
-- 파인 튜닝시, 모델 초기화를 위한 `-weights model.caffemodel ` 지정 필요 
+- **파인 튜닝**시, 모델 초기화를 위한 `-weights model.caffemodel ` 지정 필요 
 
 
 > [pycaffe로 fine-tuning하기(K)](http://yochin47.blogspot.com/2016/03/pycaffe-fine-tuning.html)
