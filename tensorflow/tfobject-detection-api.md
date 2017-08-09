@@ -30,7 +30,7 @@
 
 [설치 방법](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-08-08-TF%20Object%20Detection%20API_Installation.md)
 
-## 3. 테스트 
+## 3. Testing 
 
 > 튜토리얼 : [./object detection/object_detection_tutorial.ipynb](https://github.com/tensorflow/models/blob/master/object_detection/object_detection_tutorial.ipynb)
 
@@ -50,15 +50,12 @@ export_inference_graph.py 파일 실행시 필요한 parameter 의 이름이 바
 
 
 
-## 4. 학습 
-
-
-## 5. 다른 데이터 이용하여 학습 하기 
+## 4. Training 
 
 > [How to train your own Object Detector with TensorFlow’s Object Detector API](https://medium.com/towards-data-science/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9)
 
 
-### 5.1 데이터 준비 
+### 4.1 데이터 준비 
 
 TFRecord을 입력으로 사용함 (eg.  PASCAL VOC datasetZ)
 
@@ -71,12 +68,17 @@ TFRecord을 입력으로 사용함 (eg.  PASCAL VOC datasetZ)
     
 ###### Step 1. 이미지 준비 
 
+- Google 이미지 검색 등 
       
 ###### Step 2. 수작업으로 라벨링 진행 
 
 - [[LanelImg]](https://github.com/tzutalin/labelImg)라는 이미지 라벨링 툴을 이용
 
 - PASCAL형태의 XML로 저장 
+
+- ??? label_map.pbtxt파일 생성법??
+
+> [Sample label map](https://github.com/tensorflow/models/tree/master/object_detection/data)
 
 ###### Step 3. Convert Tools 이용 TFRecord 변경 
                 
@@ -90,6 +92,9 @@ python object_detection/create_pet_tf_record.py \
     --output_dir=`pwd`
 ```
 
+결과물 
+- *_train.record 
+- *_val.record
     
     
 - 참고 : Raccoon 이미지를 변환 하는 [3rd party](https://github.com/datitran/raccoon-dataset) 스크립트(XML - CSV - TFRecord) 
@@ -120,15 +125,15 @@ python object_detection/create_pet_tf_record.py \
 |Service|[Amazon’s Mechanical Turk](https://www.mturk.com/mturk/welcome)||
 
 
-### 5.2 Training Config 파일 수정 
+### 4.2 Training Config 파일 수정 
 - num_class : eg. 클래스가 하나 이면 1
 - PATH : Train data PATH, Test data PATH, label map PATH
     - label map : *.pbtxt파일, id + name 으로 구성 (중요 : id는 항상 1부터 시작)
-- eg. [Sample config](https://github.com/tensorflow/models/tree/master/object_detection/samples/configs), [Sample label map](https://github.com/tensorflow/models/tree/master/object_detection/data)
+- eg. [Sample config](https://github.com/tensorflow/models/tree/master/object_detection/samples/configs)
 
 > 상세 설명 : [Configuring the Object Detection Training Pipeline](https://github.com/tensorflow/models/blob/master/object_detection/g3doc/configuring_jobs.md)
 
-### 5.3 Train 
+### 4.3 실행 
 
 #### A. Local 학습 
 
@@ -138,9 +143,20 @@ python object_detection/create_pet_tf_record.py \
 
 - [Running on Google Cloud Platform](https://github.com/tensorflow/models/blob/master/object_detection/g3doc/running_on_cloud.md)
 
-### 5.4 Export Model 
+### 4.4 Export Model 
 
 - Script 이용 : [Exporting a trained model for inference](https://github.com/tensorflow/models/blob/master/object_detection/g3doc/exporting_models.md) 
+
+
+
+## 5. Transfer Learning
+
+### 5.1 새 학습 데이터 + 학습된(Pre Trained) 모델 준비 
+
+#### A. 새 학습 데이터
+
+- [4.1] 참고 
+
 
 ---
 수정 
