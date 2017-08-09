@@ -1,13 +1,13 @@
 # Tensorflow Object Detection API 
 
-- [Basic Tutorial](https://github.com/tensorflow/models/blob/master/object_detection/object_detection_tutorial.ipynb): Jupyter, 학습된 모델을 Load하여 이미지 내 물체 예측 
+- ~~[Basic Tutorial](https://github.com/tensorflow/models/blob/master/object_detection/object_detection_tutorial.ipynb)~~: Jupyter, 학습된 모델을 Load하여 이미지 내 물체 예측 
 
-    - [Real-Time Object Recognition App with Tensorflow and OpenCV](https://github.com/datitran/Object-Detector-App): 최적화 코드 
+    - ~~[Real-Time Object Recognition App with Tensorflow and OpenCV](https://github.com/datitran/Object-Detector-App)~~: 최적화 코드 
 
 
 - [Quick Start: Distributed Training on the Oxford-IIIT Pets Dataset on Google Cloud](https://github.com/tensorflow/models/blob/master/object_detection/g3doc/running_pets.md):   object detector 학습 방법 소개, **Transfer Learning**
     
-    - [How to train your own Object Detector with TensorFlow’s Object Detector API](https://medium.com/towards-data-science/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9)
+    - ~~[How to train your own Object Detector with TensorFlow’s Object Detector API](https://medium.com/towards-data-science/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9)~~
 
 - [Configuring the Object Detection Training Pipeline](https://github.com/tensorflow/models/blob/master/object_detection/g3doc/configuring_jobs.md): 학습 관련 설정 변경 
 
