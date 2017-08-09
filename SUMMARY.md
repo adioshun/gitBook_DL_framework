@@ -35,4 +35,5 @@
 * [caffe\_Tools\(int\)](caffe/caffetools.md)
 * [caffe\_Tools\_DIGITS](caffe/caffetools-digits.md)
 * [caffe\_Tip](caffe/caffetip.md)
+* [caffe2\_Intro](caffe/caffe2intro.md)
 
