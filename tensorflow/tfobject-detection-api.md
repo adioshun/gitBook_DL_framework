@@ -265,7 +265,7 @@ model.ckpt* 파일 다운 받기
 - [4.2] 참고 
 
 
-```
+```~~~~
 # 실행 단계에 필요한 파일들 
   + data/
     - faster_rcnn_resnet101_pets.config
@@ -287,8 +287,14 @@ model.ckpt* 파일 다운 받기
 수정 
 http://35.196.214.92:8585/notebooks/models/object_detection/object_detection_tutorial.ipynb#
 ```
-TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'frame{}.jpg'.format(i)) for i in range(1, 9999) ]
-#plt.imshow(image_np)
-plt.savefig('./save/{}.png'.format(image_path))
-#plt.savefig('./save/plot.png')
+  #plt.figure(figsize=IMAGE_SIZE)
+  #plt.imshow(image_np)
+  print(image_path)  
+  #cv2.imshow(image_np)
+  #plt.savefig('./save/{}.png'.format(image_path))
+
+  
+  image = scipy.misc.toimage(image_np)
+  image.save('./save/{}.jpg'.format(image_path))
+
 ```
