@@ -285,16 +285,32 @@ model.ckpt* 파일 다운 받기
 
 ---
 수정 
-http://35.196.214.92:8585/notebooks/models/object_detection/object_detection_tutorial.ipynb#
-```
-  #plt.figure(figsize=IMAGE_SIZE)
-  #plt.imshow(image_np)
-  print(image_path)  
-  #cv2.imshow(image_np)
-  #plt.savefig('./save/{}.png'.format(image_path))
+/models/object_detection/object_detection_tutorial.ipynb#
 
-  
-  image = scipy.misc.toimage(image_np)
-  image.save('./save/{}.jpg'.format(image_path))
 
 ```
+#MODEL_NAME = 'ssd_mobilenet_v1_coco_11_06_2017'
+MODEL_NAME = 'faster_rcnn_resnet101_coco_11_06_2017'
+```
+
+```
+PATH_TO_TEST_IMAGES_DIR = 'test_images'
+TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'frame{}.jpg'.format(i)) for i in range(1001, 11565) ]
+
+```
+
+```
+import scipy.misc
+
+#plt.figure(figsize=IMAGE_SIZE)
+#plt.imshow(image_np)
+print(image_path)  
+#cv2.imshow(image_np)
+#plt.savefig('./save/{}.png'.format(image_path))
+
+
+image = scipy.misc.toimage(image_np)
+image.save('./save/{}.jpg'.format(image_path))
+
+```
+- 결과물 저장 위치 :`/workspace/models/object_detection/save/test_images`
