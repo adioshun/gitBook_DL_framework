@@ -75,13 +75,30 @@ print(params[0].size())  # conv1's .weight
 optimizer = optim.Adam(model.parameters(), lr=0.0001)
 ```
 
-### 3.2 Loss 함수 정의 
+### 3.2 Loss 함수 정의 : `nn.MSELoss()`
 ```python 
-# loss function
-loss_func=nn.MSELoss() #instantiate loss function
-L=loss_func(z,y) # calculateMSE loss between output and target
-print "Loss:", L
+output = net(input)
+target = Variable(torch.arange(1, 11))  # a dummy target, for example
+criterion = nn.MSELoss()
+
+loss = criterion(output, target)
+print(loss)
 ```
+
+### 3.3 역전파 : ` loss.backward()`
+
+loss.backward()를 호출하고 backward() 호출 이전과 이후의 바이어스 그라디언트를 살펴볼 것이다.
+```python
+net.zero_grad()     # zeroes the gradient buffers of all parameters
+print(net.conv1.bias.grad)
+
+loss.backward()
+
+print(net.conv1.bias.grad)
+```
+
+
+
 
 ###### [전체 코드] 
 

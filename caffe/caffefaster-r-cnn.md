@@ -75,14 +75,23 @@ time ./tools/train_net.py --gpu ${GPU_ID} \
 
 demo.py 
 
-```python 
-    #im_file = os.path.join(cfg.DATA_DIR, 'demo', image_name)
-    im = cv2.imread(image_name)
-
-    im_names = glob.glob('/root/frame/*.jpg')
-    #im_names = ['000456.jpg', '000542.jpg', '001150.jpg',
-    #            '001763.jpg', '004545.jpg']
+```python
+    plt.savefig('demo_results/'+image_name)
+    plt.close('all')
 ```
 
-이미지 저장 위치 :`/root/frame/`
-저장 폴더 미리 생성 : `/workspace/py-faster-rcnn/tools/demo_results/root/frame`
+```python 
+PATH_TO_TEST_IMAGES_DIR = ''
+im_names = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'frame{}.jpg'.format(i)) for i in range(1, 11561) ]
+
+#im_names = ['000456.jpg', '000542.jpg', '001150.jpg',
+#            '001763.jpg', '004545.jpg']
+for im_name in im_names:
+    print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
+    print 'Demo for {}'.format(im_name)
+    demo(net, im_name)
+
+```
+
+입력 이미지 저장 위치 :`/workspace/py-faster-rcnn/data/demo`
+저장 폴더 미리 생성 : `/workspace/py-faster-rcnn/tools/demo_results/`
