@@ -73,7 +73,7 @@ time ./tools/train_net.py --gpu ${GPU_ID} \
 
 # 입력 동영상 변경 
 
-demo.py 
+/workspace/py-faster-rcnn/tools/demo.py 
 
 ```python
     plt.savefig('demo_results/'+image_name)
