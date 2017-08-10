@@ -1,4 +1,4 @@
-# Tensorflow Object Detection API 
+# Tensorflow Object Detection API  (Faster R-CNN with Resnet 101)
 
 - ~~[Basic Tutorial](https://github.com/tensorflow/models/blob/master/object_detection/object_detection_tutorial.ipynb)~~: Jupyter, 학습된 모델을 Load하여 이미지 내 물체 예측 
 
