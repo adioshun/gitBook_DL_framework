@@ -17,17 +17,15 @@
 ###### 테스트 환경 (ubuntu 16.04)
 * 그래픽카드는 GTX 1080이며 CUDA 8.0과 cuDNN 5.1을 사용한다.
 
-###### 설치 (Google Cloud , Docker)
+## 2. 설치 (Google Cloud , Docker)
+
+```bash
+docker pull adioshun/faster-rcnn:20170808r1
+
+sudo nvidia-docker run -i -t -p 2222:2222 -p 8585:8585 --volume /home/hjlim99/docker:/root --name 'rcnn2' adioshun/faster-rcnn:latest /bin/bash
 
 ```
-sudo docker pull jimmyli/faster-rcnn-gpu
-sudo nvidia-docker run -i -t --name jimmyli2 jimmyli/faster-rcnn-gpu:latest /bin/bash
-sudo nvidia-docker run -i -t -p 2222:22 -p 8585:8080 --volume /home/hjlim99/docker:/root --name 'rcnn' jimmyli/faster-rcnn-gpu:latest /bin/bash
-```
-```
-sudo docker pull tshrjn/py-faster-rcnn-demo
-sudo nvidia-docker run -i -t --name tshrjn tshrjn/py-faster-rcnn-demo:latest /bin/bash
-```
+
 
 ###### 설치 확인
 
@@ -42,21 +40,6 @@ sudo nvidia-docker run -i -t --name tshrjn tshrjn/py-faster-rcnn-demo:latest /bi
 
 > [Good to Great](http://goodtogreate.tistory.com/entry/Faster-R-CNN-Training)
 
-학습 데이터 다운 받기 \(VOC-2007 데이터\)
-
-```bash
-if [ ! -d data ]; then mkdir data; fi; cd data
-wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
-wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
-wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCdevkit_08-Jun-2007.tar
-tar xvf VOCtrainval_06-Nov-2007.tar
-tar xvf VOCtest_06-Nov-2007.tar
-tar xvf VOCdevkit_08-Jun-2007.tar
-rm -rf *.tar; cd ../
-```
-
-pre Train model 다운 로드
-
 ```bash
 $ ./data/scripts/fetch_imagenet_models.sh
 
@@ -69,65 +52,7 @@ time ./tools/train_net.py --gpu ${GPU_ID} \
   ${EXTRA_ARGS}
 ```
 
-###### solver.prototxt
-```
 
-train_net: "models/pascal_voc/VGG_CNN_M_1024/faster_rcnn_end2end/train.prototxt"
-base_lr: 0.001
-lr_policy: "step"
-gamma: 0.1
-stepsize: 50000
-display: 20
-average_loss: 100
-momentum: 0.9
-weight_decay: 0.0005
-# We disable standard caffe solver snapshotting and implement our own snapshot
-# function
-snapshot: 0
-# We still use the snapshot prefix, though
-snapshot_prefix: "vgg_cnn_m_1024_faster_rcnn"
-```
-
-
-###### train.prototxt
-
-> 모델구조
-
-```
-name: "VGG_CNN_M_1024"
-layer {
-  name: 'input-data'
-  type: 'Python'
-  top: 'data'
-  top: 'im_info'
-  top: 'gt_boxes'
-  python_param {
-    module: 'roi_data_layer.layer'
-    layer: 'RoIDataLayer'
-    param_str: "'num_classes': 21"
-  }
-}
-layer {
-  name: "conv1"
-  type: "Convolution"
-  bottom: "data"
-  top: "conv1"
-  param {
-    lr_mult: 0
-    decay_mult: 0
-  }
-  param {
-    lr_mult: 0
-    decay_mult: 0
-  }
-  convolution_param {
-    num_output: 96
-    kernel_size: 7
-    stride: 2
-  }
-}
-
-```
 
 ## 3. 테스트
 ```
@@ -139,42 +64,6 @@ layer {
 --cfg experiments/cfgs/faster_rcnn_end2end.yml
 ```
 
-###### test.prototxt
-
-```
-name: "VGG_CNN_M_1024"
-input: "data"
-input_shape {
-  dim: 1
-  dim: 3
-  dim: 224
-  dim: 224
-}
-input: "im_info"
-input_shape {
-  dim: 1
-  dim: 3
-}
-layer {
-  name: "conv1"
-  type: "Convolution"
-  bottom: "data"
-  top: "conv1"
-  param {
-    lr_mult: 0
-    decay_mult: 0
-  }
-  param {
-    lr_mult: 0
-    decay_mult: 0
-  }
-  convolution_param {
-    num_output: 96
-    kernel_size: 7
-    stride: 2
-  }
-}
-```
 
 ## 4. FineTuning 
 

@@ -58,6 +58,14 @@ for p in model.parameters():
 
 ```
 
+```python
+params = list(model.parameters())
+print(len(params))
+print(params[0].size())  # conv1's .weight
+
+
+출처: http://bob3rdnewbie.tistory.com/316 [Newbie Hacker]
+```
 
 ## 3. Training : `model.train()`
 
