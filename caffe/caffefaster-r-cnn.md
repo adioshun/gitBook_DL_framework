@@ -80,6 +80,15 @@ time ./tools/train_net.py --gpu ${GPU_ID} \
     plt.close('all')
 ```
 
+```
+def vis_detections(im, class_name, dets, image_name, thresh=0.5):
+    """Draw detected bounding boxes."""
+    inds = np.where(dets[:, -1] >= thresh)[0]
+    #if len(inds) == 0:
+    #    return
+
+```
+
 ```python 
 PATH_TO_TEST_IMAGES_DIR = ''
 im_names = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'frame{}.jpg'.format(i)) for i in range(1, 11561) ]
