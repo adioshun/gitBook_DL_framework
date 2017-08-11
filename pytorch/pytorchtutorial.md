@@ -22,9 +22,34 @@ import torch.optim as optim # optimization package
 train_loader = torch.utils.data.DataLoader()
 ```
 
-
 ## 2. Modeling
 
+#### A. 정의된 모델 불러 오기 
+
+```python
+cuda = torch.cuda.is_available()
+start_epoch = 0
+start_iteration = 0
+resume = False
+
+model = torchfcn.models.FCN8s(n_class=21)    #import torchfcn 하였기 떄문에 가능
+
+# 이전에 저장되었던 부분 부터 하기 
+if resume:
+    checkpoint = torch.load(resume)
+    model.load_state_dict(checkpoint['model_state_dict'])
+    start_epoch = checkpoint['epoch']
+    start_iteration = checkpoint['iteration']
+else:
+    fcn16s = torchfcn.models.FCN16s()
+    fcn16s.load_state_dict(torch.load(torchfcn.models.FCN16s.download())) 
+    model.copy_params_from_fcn16s(fcn16s)  #파라미터 복사 
+if cuda:
+    model = model.cuda()
+```
+
+
+#### B. 직접 정의하기 
 ```python 
 class MnistModel(nn.Module):
     def __init__(self):
@@ -75,7 +100,30 @@ print(params[0].size())  # conv1's .weight
 optimizer = optim.Adam(model.parameters(), lr=0.0001)
 ```
 
-### 3.2 Loss 함수 정의 : `nn.MSELoss()`
+### 3.2 Trainer 정의 
+
+```python
+trainer = torchfcn.Trainer(
+    cuda=cuda,
+    model=model,
+    optimizer=optim,
+    train_loader=train_loader,
+    val_loader=val_loader,
+    out='./log/',
+    #max_iter=cfg['max_iteration'],
+    max_iter=100000,
+    #interval_validate=cfg.get('interval_validate', len(train_loader)),
+    interval_validate=4000,
+
+)
+trainer.epoch = start_epoch
+trainer.iteration = start_iteration
+```
+
+최종 학습 수행 명령어 : `trainer.train()`
+
+
+###### [참고] Loss 함수 정의 : `nn.MSELoss()`
 ```python 
 output = net(input)
 target = Variable(torch.arange(1, 11))  # a dummy target, for example
@@ -85,7 +133,7 @@ loss = criterion(output, target)
 print(loss)
 ```
 
-### 3.3 역전파 : ` loss.backward()`
+###### [참고] 역전파 : ` loss.backward()`
 
 loss.backward()를 호출하고 backward() 호출 이전과 이후의 바이어스 그라디언트를 살펴볼 것이다.
 ```python
