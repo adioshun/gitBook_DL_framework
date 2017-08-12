@@ -58,7 +58,8 @@ Caffe모델 pytorch용으로 변경 하기
 ## 3. Training
 
 - [VOC Example](https://github.com/wkentaro/pytorch-fcn/tree/master/examples/voc)
-```
+
+```bash
 
 ./train_fcn8s.py -g 0
 ```
