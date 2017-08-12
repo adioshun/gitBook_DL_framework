@@ -11,6 +11,18 @@
 
 [Getting Started with Docker](https://github.com/alexgkendall/SegNet-Tutorial)
 
+```bash
+cd /root
+git clone git@github.com:alexgkendall/SegNet-Tutorial.git
+
+cd /root/SegNet-Tutorial/docker
+nvidia-docker build -t caffe:gpu ./gpu
+
+
+
+```
+
+
 ## 3. Training
 
 ## 4. Testing 
