@@ -1,20 +1,15 @@
-|제목|Fully Convolutional Networks|
+|제목|SegNet: A Deep Convolutional Encoder-Decoder Architecture for Semantic Pixel-Wise Labelling|
 |-|-|
-|코드|[wkentaro](https://github.com/wkentaro/pytorch-fcn)|
-|참고|동작 테스트 확인, 이미지 학습 및 확장 방법 검토 중|
+|코드|[alexgkendall](https://github.com/alexgkendall/caffe-segnet)|
+|참고|[논문_2015](https://arxiv.org/abs/1511.00561), [홈페이지](http://mi.eng.cam.ac.uk/projects/segnet/), [Getting Started](http://mi.eng.cam.ac.uk/projects/segnet/tutorial.html)|
 
-
-
-|제목||
-|-|-|
-|코드||
-|참고||
-
-# 
+# SegNet
 
 ## 1. 개요 
 
 ## 2. 설치 
+
+[Getting Started with Docker](https://github.com/alexgkendall/SegNet-Tutorial)
 
 ## 3. Training
 
