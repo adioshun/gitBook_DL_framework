@@ -19,14 +19,48 @@ conda install pytorch cuda80 torchvision -c soumith
 pip install .
 ```
 
+voc 데이터 다운 받기 
+```
+cd example/voc
+./download_dataset.sh
+```
+# 저장 위치 {home}/data/datasets
+
+
+Model 다운 받기 (caffe)
+```
+#fcn16s
+wget http://dl.caffe.berkeleyvision.org/fcn16s-heavy-pascal.caffemodel
+
+#fcn32s
+wget http://dl.caffe.berkeleyvision.org/fcn32s-heavy-pascal.caffemodel
+
+#fcn8s-atonce
+wget http://dl.caffe.berkeleyvision.org/fcn8s-atonce-pascal.caffemodel
+#fcn8s
+wget http://dl.caffe.berkeleyvision.org/fcn8s-heavy-pascal.caffemodel
+
+
+
+```
+
+
+
+Caffe모델 pytorch용으로 변경 하기 
+```
+
+```
+
+
+
+
 
 
 ## 3. Training
 
 - [VOC Example](https://github.com/wkentaro/pytorch-fcn/tree/master/examples/voc)
 ```
-cd example/voc
-./download_dataset.sh
+
 ./train_fcn8s.py -g 0
 ```
 
