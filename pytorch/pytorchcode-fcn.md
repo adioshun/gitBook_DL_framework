@@ -24,11 +24,14 @@ voc 데이터 다운 받기
 cd example/voc
 ./download_dataset.sh
 ```
-# 저장 위치 {home}/data/datasets
+-  저장 위치 {home}/data/datasets/VOC
 
 
 Model 다운 받기 (caffe)
-```
+
+```bash 
+cd {home}/data/models/caffe
+
 #fcn16s
 wget http://dl.caffe.berkeleyvision.org/fcn16s-heavy-pascal.caffemodel
 
@@ -39,17 +42,18 @@ wget http://dl.caffe.berkeleyvision.org/fcn32s-heavy-pascal.caffemodel
 wget http://dl.caffe.berkeleyvision.org/fcn8s-atonce-pascal.caffemodel
 #fcn8s
 wget http://dl.caffe.berkeleyvision.org/fcn8s-heavy-pascal.caffemodel
-
-
-
 ```
-
+> `fcn8s-atonce-heavy`파일 부재로 : `cp fcn8s-heavy-pascal.caffemodel fcn8s-atonce-heavy-pascal.caffemodel`
 
 
 Caffe모델 pytorch용으로 변경 하기 
 ```
+{home}/pytorch-fcn/examples/voc/model_caffe_to_pytorch.py
 
 ```
+-  저장 위치 {home}/data/models/pytorch
+
+
 
 
 
