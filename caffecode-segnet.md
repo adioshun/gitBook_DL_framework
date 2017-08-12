@@ -22,6 +22,7 @@ nvidia-docker build -t caffe:gpu ./gpu
 # Dockerhub
 nvidia-docker pull kmader/caffe-segnet
 
+
 # 동작 확인 
 nvidia-docker run -ti caffe:gpu caffe device_query -gpu 0
 
