@@ -1,7 +1,7 @@
 |제목|Fully Convolutional Networks|
 |-|-|
 |코드|[wkentaro](https://github.com/wkentaro/pytorch-fcn)|
-|참고||
+|참고|동작 테스트 확인, 이미지 학습 및 확장 방법 검토 중|
 
 # PyTorch Fully Convolutional Networks
 
