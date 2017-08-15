@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* [caffe\_Code\_SegNet](caffecode-segnet.md)
 
 ## Tensorflow
 
@@ -35,6 +34,7 @@
 * [caffe\_Tutorial\_API](caffe/caffetutorial-api.md)
 * [caffe\_Code\_Faster-R-CNN](caffe/caffefaster-r-cnn.md)
 * [caffe\_Code\_Faster-R-CNN+ResNet101](caffe/caffecode-faster-r-cnn+resnet101.md)
+* [caffe\_Code\_SegNet](caffecode-segnet.md)
 * [caffe\_Code\_cifar10](caffe/caffecifar10.md)
 * [caffe\_Tools\(int\)](caffe/caffetools.md)
 * [caffe\_Tools\_DIGITS](caffe/caffetools-digits.md)
