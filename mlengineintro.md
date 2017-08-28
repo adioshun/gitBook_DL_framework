@@ -5,6 +5,8 @@ https://github.com/hunkim/GoogleCloudMLExamples
 
 - [Cloud ML Engine Overview](https://cloud.google.com/ml-engine/docs/concepts/technical-overview)
 
+- [명령어 정리](https://cloud.google.com/sdk/gcloud/reference/ml-engine/)
+
 ## 1. 환경 설정 
 
 ### 1. 1 Cloud Shell
@@ -13,30 +15,29 @@ https://github.com/hunkim/GoogleCloudMLExamples
 
 - 미리 모든 패키지가 설치되어 있음 
 
-### 2. 2 Local(MAC/Linux)
+### 2.2 Local(MAC/Linux)
 
 ```
-
-curl https://storage.googleapis.com/cloud-ml/scripts/setup_cloud_shell.sh | bash
-export PATH=${HOME}/.local/bin:${PATH}
-
-# 세팅 확인 
-curl https://storage.googleapis.com/cloud-ml/scripts/check_environment.py | python
+# installation 
+export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update && sudo apt-get install google-cloud-sdk
 ```
 
-`wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-168.0.0-linux-x86_64.tar.gz`
-
-### 2. 3
-```
-# 초기화 
-gcloud beta ml init-project
-
-# 저장소 설정
-
+### 2.3 Setup 
 
 ```
+gcloud init
+# login
+# project setup # gcloud config set project [selected-project-id]
+```
+### 2.4 ML 모델 확인  
 
-##
+```
+gcloud ml-engine models list
+```
+
 디렉토리 구조 
 ```
 - pacakge
