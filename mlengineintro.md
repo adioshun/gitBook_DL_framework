@@ -5,6 +5,8 @@
  - [Cloud ML Engine Overview](https://cloud.google.com/ml-engine/docs/concepts/technical-overview)
  
  - [명령어 정리](https://cloud.google.com/sdk/gcloud/reference/ml-engine/)
+ 
+- [CloudML 활용 예측](http://bcho.tistory.com/1180)
 
 ## 1. 환경 설정 
 
@@ -82,14 +84,18 @@ STAGING_BUCKET=gs://${PROJECT_ID}-ml
 INPUT_PATH=${STAGING_BUCKET}/input
 OUTPUT_PATH=${STAGING_BUCKET}/output/
 
+PACKAGE_PATH='package.simple_code' # the directory of folder
+MODULE_NAME='face_recog_model.model_localfile' # format: folder_name.source_file_name
+SCALE_TIER='BASIC_GPU'
+
 #### 실행 명령어 
 gcloud ml-engine jobs submit training ${JOB_NAME} \
 --runtime-version 1.2 # 텐서플로우 버젼 지정 가능 
 --module-name=package.simple_code \
 --package-path=$(pwd)/package \
 --region=us-east1 \
---staging-bucket="${STAGING_BUCKET}" \
---scale-tier=BASIC_GPU \
+--staging-bucket=$STAGING_BUCKET \
+--scale-tier=$SCALE_TIER \
 -- --input_dir="${INPUT_PATH}" \
 -- --output_dir="${OUTPUT_PATH}" \
 
