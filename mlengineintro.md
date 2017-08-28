@@ -39,7 +39,7 @@ gcloud ml-engine models list
 디렉토리 구조 
 ```
 - pacakge
-    - model.py
+    - model.py (필요시)
     - simple_code.py
     - _init_.py
 - setup.py
