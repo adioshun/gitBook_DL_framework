@@ -44,6 +44,7 @@ gcloud ml-engine models list
     - _init_.py
 - setup.py
 - ml_engine.sh
+- config.yaml
 
 ```
 
@@ -79,7 +80,7 @@ gcloud ml-engine jobs submit training first_job_submit \
 
 # Multi_GPU
 #--scale-tier=CUSTOM
-#--config=config.yaml
+#--config=./config.yaml
 ```
 
 > [scale-tier옵션](https://cloud.google.com/ml-engine/docs/concepts/training-overview)
@@ -90,7 +91,15 @@ gcloud ml-engine jobs submit training first_job_submit \
 
 
 
+###### config.yaml
+```
+%writefile ./config.yaml
+trainingInput:
+  masterType: complex_model_m_gpu #GPU4개
+  masterType: complex_model_l_gpu #GPU8개
 
+
+````
 
 
 
