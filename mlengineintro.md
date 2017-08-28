@@ -26,11 +26,16 @@ sudo apt-get update && sudo apt-get install google-cloud-sdk
 
 ```
 gcloud init
-# login
-# project setup # gcloud config set project [selected-project-id]
+# login 및 project setup 
+```
 
-# 2.4 ML 모델 확인  
+# 2.4 환경 확인  
+```
 gcloud ml-engine models list
+gcloud projects list
+
+gcloud config set project [selected-project-id]
+gcloud config set compute/zone [zone]
 ```
 
 
@@ -133,8 +138,47 @@ gcloud ml-engine submit prediction
 
 
 
+---
+# Datalab 연동하여 실행하기 
 
+1.Google Cloud shell 접속 
+
+2.datalab 컴포넌트를 추가설치 : `gcloud components install datalab`
+
+
+3.datalab create [instance name]
+- 나중에  `datalab connect datalab-adioshun` 으로 다시 연결할 수 도있다 
+
+> `gcloud config set compute/zone us-east1-c`
+
+4. 삭제는 `datalab delete instance-name`
+
+###### Error
 ```
+Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase): 
+
+이런식으로 안넘어갈때가 있었는데 
+
+{
+ "error": {
+  "errors": [
+   {
+    "domain": "global",
+    "reason": "required",
+    "message": "Login Required",
+    "locationType": "header",
+    "location": "Authorization"
+   }
+  ],
+  "code": 401,
+  "message": "Login Required"
+ }
+}
+이걸 /home/mydiretory에다가 .sh 로 생성해서 다시 엔터치니까 그제서야 넘어갔다 
+```
+
+
 
 
 
