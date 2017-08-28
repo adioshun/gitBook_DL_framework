@@ -1,8 +1,10 @@
-[로컬에서 쌩쌩 딥러닝 코딩하기 ML Engine](http://chanacademy.tistory.com/30)
+# CLOUD MACHINE LEARNING ENGINE
 
-- [Cloud ML Engine Overview](https://cloud.google.com/ml-engine/docs/concepts/technical-overview)
+- [CLOUD MACHINE LEARNING ENGINE](https://cloud.google.com/ml-engine/)
 
-- [명령어 정리](https://cloud.google.com/sdk/gcloud/reference/ml-engine/)
+ - [Cloud ML Engine Overview](https://cloud.google.com/ml-engine/docs/concepts/technical-overview)
+ 
+ - [명령어 정리](https://cloud.google.com/sdk/gcloud/reference/ml-engine/)
 
 ## 1. 환경 설정 
 
@@ -82,6 +84,7 @@ OUTPUT_PATH=${STAGING_BUCKET}/output/
 
 #### 실행 명령어 
 gcloud ml-engine jobs submit training ${JOB_NAME} \
+--runtime-version 1.2 # 텐서플로우 버젼 지정 가능 
 --module-name=package.simple_code \
 --package-path=$(pwd)/package \
 --region=us-east1 \
@@ -90,22 +93,46 @@ gcloud ml-engine jobs submit training ${JOB_NAME} \
 -- --input_dir="${INPUT_PATH}" \
 -- --output_dir="${OUTPUT_PATH}" \
 
-#### 추가 Argument지정 가능 
-# --arg1
-# --arg2
 
 #### Multi_GPU
 #--scale-tier=CUSTOM
 #--config=./config.yaml
+
+
+--train-files $TRAIN_DATA \  #TRAIN_DATA=gs://$BUCKET_NAME/data/adult.data.csv
+--eval-files $EVAL_DATA \   #EVAL_DATA=gs://$BUCKET_NAME/data/adult.test.csv
+--train-steps 1000 \
+--verbosity DEBUG  \
+--eval-steps 100
 ```
 
 > [scale-tier옵션](https://cloud.google.com/ml-engine/docs/concepts/training-overview)
 
-> Copy input.csv to Google Storage : `gsutil cp input/input.csv $INPUT_PATH/input.csv`
+> Copy input.csv to Google Storage : `gsutil -m cp gs://cloudml-public/census/data/* data/`
 
 ###### __init__.py
 - 일반 폴더가 아닌 패키지임을 표시하기 위해 사용
 - 패키지를 초기화하는 파이썬 코드를 넣을 수 있다
+
+###### setup.py
+- 필요 패키지 설치 설정 : `pip`이용 
+
+```
+from setuptools import find_packages
+from setuptools import setup
+
+REQUIRED_PACKAGES = ['some_PyPI_package>=1.0']
+
+setup(
+    name='trainer',
+    version='0.1',
+    install_requires=REQUIRED_PACKAGES,
+    packages=find_packages(),
+    include_package_data=True,
+    description='My trainer application package.'
+)
+
+```
 
 
 
@@ -132,6 +159,11 @@ gcloud ml-engine local prediction
 # gclod 학습,예측 Job 제출 
 gcloud ml-engine submit training
 gcloud ml-engine submit prediction
+
+
+
+# CloudML 결과 확인
+gcloud ml-engine jobs stream-logs census_single_7
 
 ```
 
