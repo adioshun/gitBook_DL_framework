@@ -1,8 +1,5 @@
 [로컬에서 쌩쌩 딥러닝 코딩하기 ML Engine](http://chanacademy.tistory.com/30)
 
-https://github.com/hunkim/GoogleCloudMLExamples
-
-
 - [Cloud ML Engine Overview](https://cloud.google.com/ml-engine/docs/concepts/technical-overview)
 
 - [명령어 정리](https://cloud.google.com/sdk/gcloud/reference/ml-engine/)
@@ -31,26 +28,67 @@ sudo apt-get update && sudo apt-get install google-cloud-sdk
 gcloud init
 # login
 # project setup # gcloud config set project [selected-project-id]
-```
-### 2.4 ML 모델 확인  
 
-```
+# 2.4 ML 모델 확인  
 gcloud ml-engine models list
 ```
+
+
+## 3. Example 
 
 디렉토리 구조 
 ```
 - pacakge
     - model.py
-    - trainer.py
+    - simple_code.py
     - _init_.py
 - setup.py
 - ml_engine.sh
+
 ```
 
-![](http://i.imgur.com/mucTcZr.png)
+###### simple_code.py
 
+```python
+%writefile ./package/simple_code.py  #jupyter로 코드 작성시 자동 저장 
+
+import tensorflow as tf
+
+const = tf.constant("hello tensorflow")
+
+with tf.Session() as sess:
+  result = sess.run(const)
+  print(result)
+```
+
+###### ml_engine.sh
 ![](http://i.imgur.com/MXSlHjX.png)
+
+```shell
+%bash
+gcloud ml-engine jobs submit training first_job_submit \
+--module-name=package.simple_code \
+--package-path=$(pwd)/package \
+--region=us-east1 \
+--staging-bucket=gs://ml_engine \
+-- scale-tier=BASIC_GPU
+
+# 추가 Argument지정 가능 
+# --arg1
+# --arg2
+
+# Multi_GPU
+#--scale-tier=CUSTOM
+#--config=config.yaml
+```
+
+###### __init__.py
+- 일반 폴더가 아닌 패키지임을 표시하기 위해 사용
+- 패키지를 초기화하는 파이썬 코드를 넣을 수 있다
+
+
+
+
 
 
 
@@ -74,3 +112,6 @@ gcloud ml-engine submit prediction
 
 
 ```
+
+
+
