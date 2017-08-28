@@ -64,7 +64,7 @@ with tf.Session() as sess:
 ###### ml_engine.sh
 ![](http://i.imgur.com/MXSlHjX.png)
 
-```shell
+```bash
 %bash
 gcloud ml-engine jobs submit training first_job_submit \
 --module-name=package.simple_code \
