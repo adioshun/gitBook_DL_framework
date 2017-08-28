@@ -71,7 +71,7 @@ gcloud ml-engine jobs submit training first_job_submit \
 --package-path=$(pwd)/package \
 --region=us-east1 \
 --staging-bucket=gs://ml_engine \
--- scale-tier=BASIC_GPU
+--scale-tier=BASIC_GPU
 
 # 추가 Argument지정 가능 
 # --arg1
@@ -81,6 +81,8 @@ gcloud ml-engine jobs submit training first_job_submit \
 #--scale-tier=CUSTOM
 #--config=config.yaml
 ```
+
+> [scale-tier옵션](https://cloud.google.com/ml-engine/docs/concepts/training-overview)
 
 ###### __init__.py
 - 일반 폴더가 아닌 패키지임을 표시하기 위해 사용
