@@ -66,24 +66,37 @@ with tf.Session() as sess:
 ![](http://i.imgur.com/MXSlHjX.png)
 
 ```bash
-%bash
-gcloud ml-engine jobs submit training first_job_submit \
+#!/bin/bash
+
+#### 파라미터 설정
+JOB_NAME="task8"
+PROJECT_ID=`gcloud config list project --format "value(core.project)"`
+STAGING_BUCKET=gs://${PROJECT_ID}-ml
+INPUT_PATH=${STAGING_BUCKET}/input
+OUTPUT_PATH=${STAGING_BUCKET}/output/
+
+#### 실행 명령어 
+gcloud ml-engine jobs submit training ${JOB_NAME} \
 --module-name=package.simple_code \
 --package-path=$(pwd)/package \
 --region=us-east1 \
---staging-bucket=gs://ml_engine \
---scale-tier=BASIC_GPU
+--staging-bucket="${STAGING_BUCKET}" \
+--scale-tier=BASIC_GPU \
+-- --input_dir="${INPUT_PATH}" \
+-- --output_dir="${OUTPUT_PATH}" \
 
-# 추가 Argument지정 가능 
+#### 추가 Argument지정 가능 
 # --arg1
 # --arg2
 
-# Multi_GPU
+#### Multi_GPU
 #--scale-tier=CUSTOM
 #--config=./config.yaml
 ```
 
 > [scale-tier옵션](https://cloud.google.com/ml-engine/docs/concepts/training-overview)
+
+> Copy input.csv to Google Storage : `gsutil cp input/input.csv $INPUT_PATH/input.csv`
 
 ###### __init__.py
 - 일반 폴더가 아닌 패키지임을 표시하기 위해 사용
@@ -115,8 +128,7 @@ gcloud ml-engine local prediction
 gcloud ml-engine submit training
 gcloud ml-engine submit prediction
 
-
-# 
+```
 
 
 
