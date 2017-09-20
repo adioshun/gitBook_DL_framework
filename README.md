@@ -38,6 +38,6 @@ Code Foramt
 ## 5. Fine tuning  
 ```
 
-
+![](https://i.imgur.com/WmH1d6N.png)
 
 
