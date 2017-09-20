@@ -70,6 +70,7 @@ TFRecord을 입력으로 사용함 (eg.  PASCAL VOC datasetZ)
     
     ![](http://i.imgur.com/HfGjktp.png)
 
+> 참고 : [tfrecord 파일 읽고 쓰기](http://bcho.tistory.com/1190)
     
 ###### Step 1. 이미지 준비 
 
