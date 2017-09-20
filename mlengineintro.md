@@ -1,12 +1,5 @@
 # CLOUD MACHINE LEARNING ENGINE
 
-- [CLOUD MACHINE LEARNING ENGINE](https://cloud.google.com/ml-engine/)
-
- - [Cloud ML Engine Overview](https://cloud.google.com/ml-engine/docs/concepts/technical-overview)
- 
- - [명령어 정리](https://cloud.google.com/sdk/gcloud/reference/ml-engine/)
- 
-- [CloudML 활용 예측](http://bcho.tistory.com/1180)
 
 ## 1. 환경 설정 
 
@@ -215,6 +208,19 @@ Enter passphrase (empty for no passphrase):
 }
 이걸 /home/mydiretory에다가 .sh 로 생성해서 다시 엔터치니까 그제서야 넘어갔다 
 ```
+
+---
+
+- [CLOUD MACHINE LEARNING ENGINE](https://cloud.google.com/ml-engine/)
+
+ - [Cloud ML Engine Overview](https://cloud.google.com/ml-engine/docs/concepts/technical-overview)
+ 
+ - [명령어 정리](https://cloud.google.com/sdk/gcloud/reference/ml-engine/)
+ 
+- [CloudML 활용 예측](http://bcho.tistory.com/1180)
+
+- [Tutorial: Training CIFAR-10 Estimator Model with TensorFlow 
+for Hyperparameter Optimization](http://webofthink.tistory.com/76)
 
 
 

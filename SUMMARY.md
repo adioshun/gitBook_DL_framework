@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+* [pyTorch\_Tips](pytorchtips.md)
 
 ## Tensorflow
 
