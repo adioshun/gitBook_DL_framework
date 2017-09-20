@@ -19,3 +19,8 @@ Estimator는
 ### 1.1 Estimator 예제
 
 https://github.com/bwcho75/tensorflowML/blob/master/HighLevel%20API%201.%20Linear%20Regression%20Estimator.ipynb
+
+
+---
+
+- [새로운 텐서플로 개발 트랜드 Estimator](http://chanacademy.tistory.com/33)
