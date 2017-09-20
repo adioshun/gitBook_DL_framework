@@ -11,6 +11,7 @@
 |Tool|[LanelImg](https://github.com/tzutalin/labelImg)|TFRecord로 변경 가능 |
 |Tool|[FIAT (Fast Image Data Annotation Tool)](https://github.com/christopher5106/FastAnnotationTool)||
 |Tool|[Yolo_mark](https://github.com/AlexeyAB/Yolo_mark)|YOLO용, Windows & Linux GUI|
+|Tool|sloth||
 |Service|[CrowdFlower](https://www.crowdflower.com/)||
 |Service|[CrowdAI ](https://crowdai.com/)||
 |Service|[Amazon’s Mechanical Turk](https://www.mturk.com/mturk/welcome)||
