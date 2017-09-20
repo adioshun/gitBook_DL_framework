@@ -122,6 +122,11 @@ with tf.Session() as sess:
 ###### 샘플코드 #3 : MNIST 예제
 
 
+---
 
+- [파이쿵](http://pythonkim.tistory.com/39)
+- [COMPUTER & BOOKS](http://byungjin-study.blogspot.com/2016/08/tensorboard.html)
+- [공식 메뉴얼_한글](https://tensorflowkorea.gitbooks.io/tensorflow-kr/g3doc/how_tos/summaries_and_tensorboard/)
+- [공식 홈페이지](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tensorboard/README.md)
 
-출처:[파이쿵](http://pythonkim.tistory.com/39), [COMPUTER & BOOKS](http://byungjin-study.blogspot.com/2016/08/tensorboard.html), [공식 메뉴얼_한글](https://tensorflowkorea.gitbooks.io/tensorflow-kr/g3doc/how_tos/summaries_and_tensorboard/), [공식 홈페이지](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tensorboard/README.md)
+- [Debugging & Visualising training of Neural Network with TensorBoard](https://www.analyticsvidhya.com/blog/2017/07/debugging-neural-network-with-tensorboard/)
