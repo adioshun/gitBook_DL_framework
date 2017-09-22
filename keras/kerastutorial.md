@@ -217,19 +217,19 @@ model.load\_weights('my\_model\_weight.h5')
 * The model we all know and love
 * Treat each layer as object that feeds into the next
 
-![](https://github.com/adioshun/Blog_Jekyll/raw/master/assets/sample_keras.png)  
-![](https://github.com/adioshun/Blog_Jekyll/raw/master/assets/sample_keras2.png)
+![](https://i.imgur.com/2ix2apo.png)  
+![](https://i.imgur.com/foIMNxl.png)
 
 # Model Type : Graph
 
-![](https://github.com/adioshun/Blog_Jekyll/raw/master/assets/keras_graph.png)
+![](https://i.imgur.com/HdeH6Xr.png)
 
 * Optimized over all output
 * Graph model allows for two or more independent networks to diverge or merger
 * Allow for multiple separate inputs or outputs
 * Different merging layers\(sum or concatenate\)
 
-![](https://github.com/adioshun/Blog_Jekyll/raw/master/assets/sample_keras3.png)  
-![](https://github.com/adioshun/Blog_Jekyll/raw/master/assets/sample_keras4.png)
+![](https://i.imgur.com/46CPdC3.png)  
+![](https://i.imgur.com/LYrwa5n.png)
 
 출처 : [https://youtu.be/Tp3SaRbql4k](https://youtu.be/Tp3SaRbql4k)
