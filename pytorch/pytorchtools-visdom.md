@@ -20,3 +20,9 @@ sudo ln -s /usr/bin/g++-4.9 /usr/bin/g++
 
 sudo rm /usr/bin/gcc
 sudo ln -s /usr/bin/gcc-4.9 /usr/bin/gcc
+
+
+
+
+---
+
