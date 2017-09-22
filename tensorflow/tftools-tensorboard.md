@@ -1,4 +1,5 @@
-![](/assets/tensorboard.png)
+![](https://i.imgur.com/CMjq8n4.png)
+
 1. 코드에 텐서보드용 로그 파일 저장 위치 지정
 ```
 writer = tf.train.SummaryWriter("/tmp/test_logs", session.graph)
