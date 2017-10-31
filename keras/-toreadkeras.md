@@ -8,6 +8,8 @@
 
 # Blog/Post
 
+- [Use Keras Deep Learning Models with Scikit-Learn in Python](http://machinelearningmastery.com/use-keras-deep-learning-models-scikit-learn-python/)
+
 - [Learning Deep Learning with Keras](http://p.migdal.pl/2017/04/30/teaching-deep-learning.html)
 
 * <Del>[A simple neural network with Python and Keras](http://www.pyimagesearch.com/2016/09/26/a-simple-neural-network-with-python-and-keras/)</del>
