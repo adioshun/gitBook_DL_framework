@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [pyTorch\_Tips](pytorchtips.md)
+* [ref02\_BigQuery](ref02bigquery.md)
 
 ## Tensorflow
 
