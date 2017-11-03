@@ -1,8 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [pyTorch\_Tips](pytorchtips.md)
-* [ref02\_BigQuery](ref02bigquery.md)
+
 
 
 ## Tensorflow
@@ -32,6 +31,8 @@
 * [pyTorch\_Code\_FCN](pytorch/pytorchcode-fcn.md)
 * [pyTorch\_tools\_Visdom](pytorch/pytorchtools-visdom.md)
 * [pyTorch\_Tool\_Tensorboard](pytorch/pytorchtool-tensorboard.md)
+* [pyTorch\_Tips](pytorchtips.md)
+
 
 ## caffe
 
@@ -53,11 +54,12 @@
 
 ## MXNet
 
-* MXNet\_To\_Read
-
-
+* [MXNet\_To\_Read](mxnet/mxnetto-read.md)
 
 ## Reference
 
 * [ref01\_Model\_Conversion](ref01model-conversion.md)
+* [ref02\_BigQuery](ref02bigquery.md)
+
+
 
