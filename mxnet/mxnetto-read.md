@@ -12,6 +12,8 @@
 
 - [An Introduction to the MXNet Python API ](http://www.kdnuggets.com/2017/05/intro-mxnet-python-api.html)
 
+- [Gluon 상세 소개](https://aws.amazon.com/ko/blogs/korea/introducing-gluon-an-easy-to-use-programming-interface-for-flexible-deep-learning/?utm_source=dlvr.it&utm_medium=facebook): 유연한 딥러닝을 위한 사용하기 쉬운 프로그램 인터페이스
+
 ## 3. Tutorial (Series, )
 
 - [Mxnet_Tutorial](https://github.com/JONGGON/Mxnet_Tutorial): JONGGON's github

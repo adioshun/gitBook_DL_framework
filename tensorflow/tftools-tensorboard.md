@@ -131,3 +131,5 @@ with tf.Session() as sess:
 - [공식 홈페이지](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tensorboard/README.md)
 
 - [Debugging & Visualising training of Neural Network with TensorBoard](https://www.analyticsvidhya.com/blog/2017/07/debugging-neural-network-with-tensorboard/)
+
+- [jupyter-tensorboard](https://github.com/lspvic/jupyter_tensorboard)
