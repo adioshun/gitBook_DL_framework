@@ -67,6 +67,8 @@ PyTorch는 자체적으로 discuss / slack 을 운영하고 있습니다.
 
 - [pix2pix + BEGAN](https://github.com/taey16/pix2pixBEGAN.pytorch)
 
+- [Image Segmentation and Object Detection in Pytorch](https://github.com/warmspringwinds/pytorch-segmentation-detection)
+
 # Torch - not Pytorch
 
 - [토치 학습 자료 한국어 번역본](https://github.com/jaewoosong/torch-tutorial-korean/): jaewoosong
