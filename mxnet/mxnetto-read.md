@@ -14,6 +14,8 @@
 
 - [Gluon 상세 소개](https://aws.amazon.com/ko/blogs/korea/introducing-gluon-an-easy-to-use-programming-interface-for-flexible-deep-learning/?utm_source=dlvr.it&utm_medium=facebook): 유연한 딥러닝을 위한 사용하기 쉬운 프로그램 인터페이스
 
+- [MXNet 시작하기 (1) – NDArrays API](http://blog.creation.net/mxnet-part-1-ndarrays-api#.Wh_Ub0qnFjU)
+
 ## 3. Tutorial (Series, )
 
 - [Mxnet_Tutorial](https://github.com/JONGGON/Mxnet_Tutorial): JONGGON's github
