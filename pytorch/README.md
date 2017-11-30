@@ -54,6 +54,7 @@ PyTorch는 자체적으로 discuss / slack 을 운영하고 있습니다.
 - [PyTorch FastCampus](https://github.com/GunhoChoi/PyTorch-FastCampus): 추천, PyTorch로 시작하는 딥러닝 입문 CAMP (www.fastcampus.co.kr/data_camp_pytorch/) 1기 강의자료
 
 
+- [MILA의 PyTorch 튜토리얼 세트](https://github.com/mila-udem/welcome_tutorials/tree/master/pytorch) 
 
 # Implementation
 
