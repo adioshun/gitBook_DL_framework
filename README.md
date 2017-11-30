@@ -8,8 +8,11 @@
 
 - [딥러닝프레임워크비교](https://www.slideshare.net/JunyiSong1/ss-75552936?from_m_app=android): ppt54
 
+## 기타 툴
 
+ - [luminoth](https://github.com/tryolabs/luminoth)
 
+--- 
 
 ###### 참고: Labeling Tools , Service
 |구분|이름|특징|
@@ -26,7 +29,7 @@
 ---
 Code Foramt
 
-```md
+```
 |제목||
 |-|-|
 |코드||
