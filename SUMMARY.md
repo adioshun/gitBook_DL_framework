@@ -3,8 +3,7 @@
 ## DeepLearning Framewor
 
 * [Introduction](README.md)
-
-
+* [ref\_03\_Visualization](ref03-visualization.md)
 
 ## Tensorflow
 
@@ -35,7 +34,6 @@
 * [pyTorch\_Tool\_Tensorboard](pytorch/pytorchtool-tensorboard.md)
 * [pyTorch\_Tips](pytorchtips.md)
 
-
 ## caffe
 
 * [-ToREAD\_Caffe](caffe/-toreadcaffe.md)
@@ -62,6 +60,4 @@
 
 * [ref01\_Model\_Conversion](ref01model-conversion.md)
 * [ref02\_BigQuery](ref02bigquery.md)
-
-
 
