@@ -3,7 +3,7 @@
 ## DeepLearning Framewor
 
 * [Introduction](README.md)
-* [ref\_03\_Visualization](ref03-visualization.md)
+
 
 ## Tensorflow
 
@@ -60,4 +60,6 @@
 
 * [ref01\_Model\_Conversion](ref01model-conversion.md)
 * [ref02\_BigQuery](ref02bigquery.md)
+* [ref\_03\_Visualization](ref03-visualization.md)
+
 
