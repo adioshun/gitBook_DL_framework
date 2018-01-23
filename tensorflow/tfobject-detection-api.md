@@ -14,7 +14,9 @@
 
 
 # 1. 개요
-> 출처 : [홈페이지](https://github.com/tensorflow/models/tree/master/object_detection), [GOOD to GREAT](http://goodtogreate.tistory.com/entry/Tensorflow-Object-Detection-API-SSD-FasterRCNN)
+> 출처 : [홈페이지](https://github.com/tensorflow/models/tree/master/research/object_detection), [GOOD to GREAT](http://goodtogreate.tistory.com/entry/Tensorflow-Object-Detection-API-SSD-FasterRCNN)
+
+h
 
 
 2017.06.15월 공개 
@@ -54,19 +56,24 @@ git clone https://github.com/tensorflow/models.git
 ```
 
 ###### 2.2 설정
-Protobuf 컴파일
+- Protobuf 컴파일
+
 ```bash
 # From tensorflow/models/
 protoc object_detection/protos/*.proto --python_out=.
 ```
 
-Add Libraries to PYTHONPATH : slim 디렉터리를 append시키기 위함이다.
+> Protobuf : XML과 같이 데이터를 저장하는 하나의 포맷, 컴파일후 언어에 맞는 형태의 데이타 클래스 파일을 생성 [[참고]](http://bcho.tistory.com/1182)
+
+- Add Libraries to PYTHONPATH : slim 디렉터리를 append시키기 위함이다.
+
 ```bash
 # From tensorflow/models/
 export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 ```
 
 ###### 2.3 설치 확인
+
 ```bash
 python object_detection/builders/model_builder_test.py
 
