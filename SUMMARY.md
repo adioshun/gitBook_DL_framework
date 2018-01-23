@@ -4,7 +4,6 @@
 
 * [Introduction](README.md)
 
-
 ## Tensorflow
 
 * [-ToREAD\_TF](tensorflow/-toreadtf.md)
@@ -51,6 +50,7 @@
 * [caffe\_Tools\_DIGITS](caffe/caffetools-digits.md)
 * [caffe\_Tip](caffe/caffetip.md)
 * [caffe2\_Intro](caffe/caffe2intro.md)
+* [caffe2\_detectron](caffe/caffe2detectron.md)
 
 ## MXNet
 
@@ -61,5 +61,4 @@
 * [ref01\_Model\_Conversion](ref01model-conversion.md)
 * [ref02\_BigQuery](ref02bigquery.md)
 * [ref\_03\_Visualization](ref03-visualization.md)
-
 
