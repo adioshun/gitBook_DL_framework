@@ -12,6 +12,17 @@
 
 - [랩실습] [Image Classification with DIGITS](https://nvidia.qwiklab.com/focuses/1579)
 
+- [한글 설명](http://digitalbourgeois.tistory.com/36)
+
+- [설치 방법](http://namnamseo.tistory.com/entry/Ubuntu-1604%EC%97%90%EC%84%9C%EC%9D%98-NVIDIA-DIGITS-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9
+
+출처: http://digitalbourgeois.tistory.com/36 [IT 글자국])
+
+- [사용법 동영상](https://www.youtube.com/watch?v=dgxe15vCR7s
+
+출처: http://digitalbourgeois.tistory.com/36 [IT 글자국])
+
+
 ---
 
 NVIDIA DIGITS 5 (updated Feb 1, 2017)
