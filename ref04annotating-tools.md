@@ -11,3 +11,9 @@
 
 
 - [Annotating Large Datasets with the TensorFlow Object Detection API](http://andrew.carterlunn.co.uk/programming/2018/01/24/annotating-large-datasets-with-tensorflow-object-detection-api.html): 딥러닝 기 라벨링 기법 
+
+## 업체 
+
+- 해외 : 아마존 Mechanical Turk (MTurk)
+
+- 국내 : [crowdworks](http://www.crowdworks.kr)
