@@ -1,6 +1,6 @@
 ## Colab
 
-- 구글 제공 무료 GPU 쥬피터 
+- 구글 제공 무료 GPU 쥬피터, K80을 최대 12시간 이
 
 - [설정 및 사용법](Google Colab Free GPU Tutorial): Keras기반 타이타닉 Tutorial 
 
