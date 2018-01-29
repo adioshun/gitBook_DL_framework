@@ -58,7 +58,7 @@
 
 ## Cloud Service
 
-- Colab
+* [Colab](cloud-service/colab.md)
 
 ## Reference
 
