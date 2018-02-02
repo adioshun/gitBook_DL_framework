@@ -1,30 +1,5 @@
 ## 3. 시각화 \(NVIDIA DIGITS\)
 
----
-
-* [A Practical Introduction to Deep Learning with Caffe](http://www.panderson.me/images/Caffe.pdf): ppt
-
-- [DIGITS](https://github.com/NVIDIA/DIGITS)
-
-- [NVIDIA Deep Learning Course: Class #2 - Getting Started with DIGITS](https://www.youtube.com/watch?v=jUiudfxjdr8)
-
-- [NVIDIADeveloper](https://www.youtube.com/playlist?list=PL5B692fm6--tI-ijknnVZWbXU2H4JpSYe)
-
-- [랩실습] [Image Classification with DIGITS](https://nvidia.qwiklab.com/focuses/1579)
-
-- [한글 설명](http://digitalbourgeois.tistory.com/36)
-
-- [설치 방법](http://namnamseo.tistory.com/entry/Ubuntu-1604%EC%97%90%EC%84%9C%EC%9D%98-NVIDIA-DIGITS-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9
-
-출처: http://digitalbourgeois.tistory.com/36 [IT 글자국])
-
-- [사용법 동영상](https://www.youtube.com/watch?v=dgxe15vCR7s
-
-출처: http://digitalbourgeois.tistory.com/36 [IT 글자국])
-
-
----
-
 NVIDIA DIGITS 5 (updated Feb 1, 2017)
 NVIDIA DIGITS 4 (updated January 20, 2017)
 NVIDIA DIGITS 3 (updated Feb 10, 2016)
@@ -79,13 +54,50 @@ sudo apt-get install DIGITS
 ### 1.3 Docker로 설치
 - Docker를 이용하여 DIGITS 설치하기 : [Docker Hub](https://hub.docker.com/r/nvidia/digits/), [설명](https://github.com/NVIDIA/nvidia-docker/wiki/DIGITS)
 
+```
+docker pull nvidia/digits
+mkdir /sharefolder
+docker run --runtime=nvidia --name digits -d 8585:5000 -v /sharefolder:/data nvidia/digits
+```
+
 # 실행
 
-확인 : sudo service digits status
+```bash
+#확인 
+sudo service digits status
 
-접속 : http://localhost
+#접속 
+http://localhost
 
-설정(포트): sudo dpkg-reconfigure digits
+#설정(포트)
+sudo dpkg-reconfigure digits
+```
+
+
+
+---
+
+# [참고]
+
+* [A Practical Introduction to Deep Learning with Caffe](http://www.panderson.me/images/Caffe.pdf): ppt
+
+- [DIGITS](https://github.com/NVIDIA/DIGITS)
+
+- [NVIDIA Deep Learning Course: Class #2 - Getting Started with DIGITS](https://www.youtube.com/watch?v=jUiudfxjdr8)
+
+- [NVIDIADeveloper](https://www.youtube.com/playlist?list=PL5B692fm6--tI-ijknnVZWbXU2H4JpSYe)
+
+- [랩실습] [Image Classification with DIGITS](https://nvidia.qwiklab.com/focuses/1579)
+
+- [한글 설명](http://digitalbourgeois.tistory.com/36)
+
+- [설치 방법](http://namnamseo.tistory.com/entry/Ubuntu-1604%EC%97%90%EC%84%9C%EC%9D%98-NVIDIA-DIGITS-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9
+
+출처: http://digitalbourgeois.tistory.com/36 [IT 글자국])
+
+- [사용법 동영상](https://www.youtube.com/watch?v=dgxe15vCR7s
+
+출처: http://digitalbourgeois.tistory.com/36 [IT 글자국])
 
 > [Getting Started](https://github.com/NVIDIA/DIGITS/blob/digits-5.0/docs/GettingStarted.md)
 
@@ -99,11 +111,14 @@ sudo apt-get install DIGITS
 - [랩실습] [Image Classification with DIGITS](https://nvidia.qwiklab.com/focuses/1579)
 
 
-
-
 [Image Segmentation Using DIGITS 5](https://devblogs.nvidia.com/parallelforall/image-segmentation-using-digits-5/)
 
 [Deep Learning for Object Detection with DIGITS](https://devblogs.nvidia.com/parallelforall/deep-learning-object-detection-digits/)
+
+
+
+
+
 
 
 
