@@ -93,22 +93,11 @@ sudo dpkg-reconfigure digits
 
 - [설치 방법](http://namnamseo.tistory.com/entry/Ubuntu-1604%EC%97%90%EC%84%9C%EC%9D%98-NVIDIA-DIGITS-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9
 
-출처: http://digitalbourgeois.tistory.com/36 [IT 글자국])
-
 - [사용법 동영상](https://www.youtube.com/watch?v=dgxe15vCR7s
 
-출처: http://digitalbourgeois.tistory.com/36 [IT 글자국])
+
 
 > [Getting Started](https://github.com/NVIDIA/DIGITS/blob/digits-5.0/docs/GettingStarted.md)
-
-
-
-- [DIGITS](https://github.com/NVIDIA/DIGITS)
-- [NVIDIA Deep Learning Course: Class #2 - Getting Started with DIGITS](https://www.youtube.com/watch?v=jUiudfxjdr8)
-
-- [NVIDIADeveloper](https://www.youtube.com/playlist?list=PL5B692fm6--tI-ijknnVZWbXU2H4JpSYe)
-
-- [랩실습] [Image Classification with DIGITS](https://nvidia.qwiklab.com/focuses/1579)
 
 
 [Image Segmentation Using DIGITS 5](https://devblogs.nvidia.com/parallelforall/image-segmentation-using-digits-5/)
