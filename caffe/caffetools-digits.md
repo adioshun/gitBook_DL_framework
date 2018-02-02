@@ -83,7 +83,7 @@ sudo dpkg-reconfigure digits
 
 - [DIGITS](https://github.com/NVIDIA/DIGITS)
 
-- [NVIDIA Deep Learning Course: Class #2 - Getting Started with DIGITS](https://www.youtube.com/watch?v=jUiudfxjdr8)
+- [NVIDIA Deep Learning Course: Class #2 - Getting Started with DIGITS](https://www.youtube.com/watch?v=jUiudfxjdr8): 1시간 강좌 
 
 - [NVIDIADeveloper](https://www.youtube.com/playlist?list=PL5B692fm6--tI-ijknnVZWbXU2H4JpSYe)
 
