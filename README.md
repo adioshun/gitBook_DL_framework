@@ -17,29 +17,3 @@
 --- 
 
 
-
----
-Code Foramt
-
-```
-|제목||
-|-|-|
-|코드||
-|참고||
-
-# 
-
-## 1. 개요 
-
-## 2. 설치 
-
-## 3. Training
-
-## 4. Testing 
-
-## 5. Fine tuning  
-```
-
-![](https://i.imgur.com/WmH1d6N.png)
-
-
