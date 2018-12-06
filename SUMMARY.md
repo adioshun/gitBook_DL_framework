@@ -32,7 +32,7 @@
 * [pyTorch\_tools\_Visdom](pytorch/pytorchtools-visdom.md)
 * [pyTorch\_Tool\_Tensorboard](pytorch/pytorchtool-tensorboard.md)
 * [pyTorch\_Tips](pytorchtips.md)
-  * [\[PyTorch-einops](pytorchtips/pytorch-einops.md)
+  * [\[\[PyTorch-einops\]\(pytorchtips/pytorch-einops.md\)](pytorchtips/pytorch-einopspytorchtipspytorch-einopsmd.md)
 
 ## caffe
 
