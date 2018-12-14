@@ -34,6 +34,7 @@
 * [pyTorch\_Tips](pytorchtips.md)
   * [\[\[PyTorch-einops\]\(pytorchtips/pytorch-einops.md\)](pytorchtips/pytorch-einopspytorchtipspytorch-einopsmd.md)
   * [Parallel\_computing](pytorchtips/parallelcomputing.md)
+  * [multi\_GPU](pytorchtips/multigpu.md)
 
 ## caffe
 
