@@ -75,3 +75,27 @@ PyTorch는 자체적으로 discuss / slack 을 운영하고 있습니다.
 - [토치 학습 자료 한국어 번역본](https://github.com/jaewoosong/torch-tutorial-korean/): jaewoosong
 
 - [토치(Torch) 한국어 사용 설명서](https://github.com/LeeTaewoo/torch_kor_manual): LeeTaewoo, 2015
+
+
+---
+
+추가적으로 참고할 링크
+비디오 게임 플레이를 위한 뉴럴 네트워크 학습
+http://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html
+ImageNet 대상으로 최첨단 ResNet 네트워크 학습
+https://github.com/pytorch/examples/tree/master/imagenet
+Generative Adversarial 네트워크를 이용한 얼굴 생성기 학습
+https://github.com/pytorch/examples/tree/master/dcgan
+반복적인 LSTM 네트워크를 사용하여 단어 수준 언어 모델 훈련
+https://github.com/pytorch/examples/tree/master/word_language_model
+추가 예제
+https://github.com/pytorch/examples/tree/master/word_language_model
+추가 튜토리얼
+https://github.com/pytorch/examples
+PyTorch 토론장
+https://discuss.pytorch.org/
+Slack에서 다른 사용자들과 채팅
+https://pytorch.slack.com/?redir=%2Fmessages%2Fbeginner
+
+
+출처: http://bob3rdnewbie.tistory.com/317 [Newbie Hacker]
