@@ -26,6 +26,6 @@ https://github.com/ritchieng/the-incredible-pytorch
 
 > [2017-07-18_pyTorch_installation.md](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18_pyTorch_installation.md)
 
-## 3. 
+
 
 
