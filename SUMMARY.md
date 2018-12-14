@@ -33,6 +33,7 @@
 * [pyTorch\_Tool\_Tensorboard](pytorch/pytorchtool-tensorboard.md)
 * [pyTorch\_Tips](pytorchtips.md)
   * [\[\[PyTorch-einops\]\(pytorchtips/pytorch-einops.md\)](pytorchtips/pytorch-einopspytorchtipspytorch-einopsmd.md)
+  * [Parallel\_computing](pytorchtips/parallelcomputing.md)
 
 ## caffe
 
