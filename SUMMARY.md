@@ -1,8 +1,8 @@
 # Summary
 
-## DeepLearning Framewor
+## DeepLearning Framework
 
-* [Introduction](README.md)
+* [README](README.md)
 
 ## Tensorflow
 
