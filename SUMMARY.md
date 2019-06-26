@@ -25,7 +25,7 @@
 ## pyTorch
 
 * [README](pytorch/README.md)
-* [Tutorial](pytorch/pytorchtutorial.md)
+* [Tutorial](pytorch/Tutorial.md)
 * [Sample](pytorch/Sample/README.md)
   * [YOLO2](pytorch/Sample/yolo2.md)
   * [Faster-R-CNN](pytorch/Sample/faster-r-cnn.md)
@@ -33,13 +33,7 @@
 * [Tools](pytorch/Tools/README.md)
   * [Visdom](pytorch/Tools/visdom.md)
   * [pyTorch-with-Tensorboard](pytorch/Tools/pytorch-with-tensorboard.md)
-* [pyTorch\_tools\_Visdom](pytorch/pytorchtools-visdom.md)
-* [pyTorch\_Tool\_Tensorboard](pytorch/pytorchtool-tensorboard.md)
 * [Tips](pytorch/Tips.md)
-* [pyTorch\_Tips](pytorchtips.md)
-  * [\[\[PyTorch-einops\]\(pytorchtips/pytorch-einops.md\)](pytorchtips/pytorch-einopspytorchtipspytorch-einopsmd.md)
-  * [Parallel\_computing](pytorchtips/parallelcomputing.md)
-  * [multi\_GPU](pytorchtips/multigpu.md)
 
 ## caffe
 
