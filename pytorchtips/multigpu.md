@@ -1,1 +1,0 @@
-http://bob3rdnewbie.tistory.com/321?category=780658

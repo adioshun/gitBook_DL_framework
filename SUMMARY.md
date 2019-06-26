@@ -32,6 +32,7 @@
   * [FCN](pytorch/Sample/fcn.md)
 * [Tools](pytorch/Tools/README.md)
   * [Visdom](pytorch/Tools/visdom.md)
+  * [pyTorch-with-Tensorboard](pytorch/Tools/pytorch-with-tensorboard.md)
 * [pyTorch\_tools\_Visdom](pytorch/pytorchtools-visdom.md)
 * [pyTorch\_Tool\_Tensorboard](pytorch/pytorchtool-tensorboard.md)
 * [Tips](pytorch/Tips.md)
