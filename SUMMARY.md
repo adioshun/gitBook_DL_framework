@@ -25,12 +25,13 @@
 ## pyTorch
 
 * [README](pytorch/README.md)
-* [pyTorch\_Tutorial](pytorch/pytorchtutorial.md)
+* [Tutorial](pytorch/pytorchtutorial.md)
 * [Sample](pytorch/Sample/README.md)
   * [YOLO2](pytorch/Sample/yolo2.md)
   * [Faster-R-CNN](pytorch/Sample/faster-r-cnn.md)
   * [FCN](pytorch/Sample/fcn.md)
 * [Tools](pytorch/Tools/README.md)
+  * [Visdom](pytorch/Tools/visdom.md)
 * [pyTorch\_tools\_Visdom](pytorch/pytorchtools-visdom.md)
 * [pyTorch\_Tool\_Tensorboard](pytorch/pytorchtool-tensorboard.md)
 * [Tips](pytorch/Tips.md)
