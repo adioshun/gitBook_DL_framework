@@ -25,12 +25,8 @@
 ## pyTorch
 
 * [README](pytorch/README.md)
-* [pyTorch\_Intro](pytorch/pytorchintro.md)
 * [pyTorch\_Tutorial](pytorch/pytorchtutorial.md)
 * [Sample](pytorch/Sample/README.md)
-  * [pyTorch\_Code\_YOLO2](pytorchcode-yolo2.md)
-  * [pyTorch\_Code\_Faster\_R-CNN](pytorchcode-faster-r-cnn.md)
-  * [pyTorch\_Code\_FCN](pytorch/pytorchcode-fcn.md)
   * [YOLO2](yolo2.md)
   * [Faster-R-CNN](faster-r-cnn.md)
   * [FCN](fcn.md)
