@@ -8,12 +8,6 @@
 
 * [README](tensorflow/README.md)
 * [Tutorial](tensorflow/Tutorial.md)
-* [tf\_Object-Detection-API ](tensorflow/tfobject-detection-api.md)
-* [tf\_hub](tensorflow/tfhub.md)
-* [tf\_save\_restore](tensorflow/tfsave-restore.md)
-* [tf\_tools\_tensorboard](tensorflow/tftools-tensorboard.md)
-* [tf\_API](tensorflow/tfapi.md)
-* [tf\_CloudML](mlengineintro.md)
 * [Sample](tensorflow/Sample/README.md)
   * [Object-Detection-API](tensorflow/Sample/Object-Detection-API.md)
 * [Tools](tensorflow/Tools/README.md)
