@@ -12,13 +12,14 @@
 * [tf\_hub](tensorflow/tfhub.md)
 * [tf\_save\_restore](tensorflow/tfsave-restore.md)
 * [tf\_tools\_tensorboard](tensorflow/tftools-tensorboard.md)
-* [tf\_Tip](tensorflow/tftip.md)
 * [tf\_API](tensorflow/tfapi.md)
 * [tf\_CloudML](mlengineintro.md)
 * [Sample](tensorflow/Sample/README.md)
-* [Tools](tensorflow/Tools.md)
+  * [Object-Detection-API](tensorflow/Sample/Object-Detection-API.md)
+* [Tools](tensorflow/Tools/README.md)
+  * [Tensorboard](tensorflow/Tools/Tensorboard.md)
+  * [CloudML](tensorflow/Tools/CloudML.md)
 * [Tips](tensorflow/Tips.md)
-
 
 ## pyTorch
 
@@ -38,8 +39,6 @@
 * [-ToRead\_Keras](keras/-toreadkeras.md)
 * [keras\_Intro](keras/kerasintro.md)
 * [Keras\_tutorial](keras/kerastutorial.md)
-
-
 
 ## caffe
 
