@@ -7,6 +7,7 @@
 ## Tensorflow
 
 * [README](tensorflow/README.md)
+* [Tutorial](tensorflow/Tutorial.md)
 * [tf\_Object-Detection-API ](tensorflow/tfobject-detection-api.md)
 * [tf\_hub](tensorflow/tfhub.md)
 * [tf\_save\_restore](tensorflow/tfsave-restore.md)
@@ -14,12 +15,10 @@
 * [tf\_Tip](tensorflow/tftip.md)
 * [tf\_API](tensorflow/tfapi.md)
 * [tf\_CloudML](mlengineintro.md)
+* [Sample](tensorflow/Sample/README.md)
+* [Tools](tensorflow/Tools.md)
+* [Tips](tensorflow/Tips.md)
 
-## Keras
-
-* [-ToRead\_Keras](keras/-toreadkeras.md)
-* [keras\_Intro](keras/kerasintro.md)
-* [Keras\_tutorial](keras/kerastutorial.md)
 
 ## pyTorch
 
@@ -33,6 +32,14 @@
   * [Visdom](pytorch/Tools/visdom.md)
   * [pyTorch-with-Tensorboard](pytorch/Tools/pytorch-with-tensorboard.md)
 * [Tips](pytorch/Tips.md)
+
+## Keras
+
+* [-ToRead\_Keras](keras/-toreadkeras.md)
+* [keras\_Intro](keras/kerasintro.md)
+* [Keras\_tutorial](keras/kerastutorial.md)
+
+
 
 ## caffe
 
