@@ -30,6 +30,8 @@
 
 ## Keras
 
+* [README](keras/README.md)
+* [Tutorial](keras/Tutorial.md)
 * [-ToRead\_Keras](keras/-toreadkeras.md)
 * [keras\_Intro](keras/kerasintro.md)
 * [Keras\_tutorial](keras/kerastutorial.md)
