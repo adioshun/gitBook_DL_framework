@@ -10,6 +10,16 @@
 
 ## 2. 설치 
 
+```python 
+$ cd ~/catkin_ws/src
+$ git clone --recursive https://github.com/leggedrobotics/darknet_ros.git
+$ cd ..
+$ catkin_make  #OR catkin_make -DCMAKE_BUILD_TYPE = Release
+
+```
+
+
+
 학습 값(`wrs_10000.weights`)과 설정 파일(`wrs_test.cfg`) 위치 확인 
 
 ```
