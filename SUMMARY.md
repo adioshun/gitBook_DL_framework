@@ -32,6 +32,8 @@
 
 * [README](keras/README.md)
 * [Tutorial](keras/Tutorial.md)
+* [Tools](keras/Tools/README.md)
+  * [Hyper-parameter Tuner](keras/Tools/Tuner.md)
 
 ## caffe
 
