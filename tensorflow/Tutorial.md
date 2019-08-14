@@ -1,4 +1,24 @@
+# Tutorial 
 
+
+## Terms
+
+###### Placeholder
+
+일종의 자료형, 다른 텐서를 할당하는 것
+
+placeholder의 전달 파라미터는 다음과 같다.
+
+```python 
+placeholder(
+    dtype,      # 데이터 타입을 의미하며 반드시 적어주어야 한다.
+    shape=None, # 입력 데이터의 형태를 의미한다. 상수 값이 될 수도 있고 다차원 배열의 정보가 들어올 수도 있다. ( 디폴트 파라미터로 None 지정 )
+    name=None   # 해당 placeholder의 이름을 부여하는 것으로 적지 않아도 된다.  ( 디폴트 파라미터로 None 지정 )
+)
+```
+
+
+---
 
 
 
