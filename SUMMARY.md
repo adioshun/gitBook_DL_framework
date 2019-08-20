@@ -17,16 +17,11 @@
 
 ## pyTorch
 
-* [README](pytorch/README.md)
-* [Tutorial](pytorch/Tutorial.md)
 * [Sample](pytorch/Sample/README.md)
   * [YOLO2](pytorch/Sample/yolo2.md)
   * [Faster-R-CNN](pytorch/Sample/faster-r-cnn.md)
   * [FCN](pytorch/Sample/fcn.md)
-* [Tools](pytorch/Tools/README.md)
-  * [Visdom](pytorch/Tools/visdom.md)
-  * [pyTorch-with-Tensorboard](pytorch/Tools/pytorch-with-tensorboard.md)
-* [Tips](pytorch/Tips.md)
+
 
 ## Keras
 
