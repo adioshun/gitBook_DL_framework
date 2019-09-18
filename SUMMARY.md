@@ -4,33 +4,15 @@
 
 * [README](README.md)
 
-## Tensorflow
-
-* [README](tensorflow/README.md)
-* [Tutorial](tensorflow/Tutorial.md)
-* [Sample](tensorflow/Sample/README.md)
-  * [Object-Detection-API](tensorflow/Sample/Object-Detection-API.md)
-* [Tools](tensorflow/Tools/README.md)
-  * [Tensorboard](tensorflow/Tools/Tensorboard.md)
-  * [CloudML](tensorflow/Tools/CloudML.md)
-* [Tips](tensorflow/Tips.md)
-
-## pyTorch
-
-* [Sample](pytorch/Sample/README.md)
-  * [YOLO2](pytorch/Sample/yolo2.md)
-  * [Faster-R-CNN](pytorch/Sample/faster-r-cnn.md)
-  * [FCN](pytorch/Sample/fcn.md)
-
-
 ## Keras
 
 * [README](keras/README.md)
 * [Tutorial](keras/Tutorial.md)
 * [Tools](keras/Tools/README.md)
   * [Hyper-parameter Tuner](keras/Tools/Tuner.md)
-  
+
 ## DarkNet
+
 * [README](Darknet/README.md)
 * [YOLO3 for ROS](Darknet/YOLO_v3_ROS.md)
 
